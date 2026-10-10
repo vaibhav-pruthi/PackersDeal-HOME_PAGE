@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  PackersDeal — Landing Page (UPDATED CODE, 2026-10-09)
+  Regenerated with all the latest fixes from the live page:
+  navbar (51px underline, services icon), hero (clean background,
+  exact text), quote form, process bar (half overlapping the hero),
+  expect cards, service badges, location pins, trust icons,
+  footer social icons.
+  10 sections in order below. Each section has a numbered comment.
+  NOTE: placeholder names are used for images in assets/ —
+  the real file path is written in a comment above each <img>.
+============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PackersDeal — Certified Packers and Movers</title>
+<!-- Fonts: ADLaM Display for logo, Quicksand 700 for headings, Inter for body text and buttons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Quicksand:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ 1. HEADER / NAVBAR (white, 72.71px tall) ============ -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#"><img src="assets/logo-navbar.svg" alt="PackersDeal"></a>
+    <nav class="nav-links">
+      <!-- Home is the ACTIVE link: 51px blue underline below the text -->
+      <a href="#" class="active">Home</a>
+      <!-- Services link with a blue circular outlined dropdown icon -->
+      <a href="#" class="has-drop">Services <span class="drop-icon"></span></a>
+      <a href="#">Moving Tips</a>
+      <a href="#">Locations</a>
+      <a href="#">Cost Calculator</a>
+    </nav>
+    <!-- CTA button: 240x48, 12px rounded corners, blue gradient -->
+    <a href="#" class="btn btn-nav">GET US A FREE QUOTE</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" class="active">Home</a><a href="#">Services</a><a href="#">Moving Tips</a>
+    <a href="#">Locations</a><a href="#">Cost Calculator</a>
+    <a href="#" class="btn btn-nav">GET US A FREE QUOTE</a>
+  </div>
+</header>
+
+<!-- ============ 2. HERO (light blue #DDEFFD, one continuous background) ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1>Why Hire Certified<br>Packers and Movers?</h1>
+      <p>PackersDeal connects you with verified packers and movers you can trust. Compare services, get transparent quotes, and choose reliable professionals for a safe and hassle-free move. From home shifting to office relocation, PackersDeal ensures quality, security, and peace of mind at every step</p>
+      <a href="#" class="btn btn-hero">GET US A FREE QUOTE</a>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-icon stat-people"></span>
+          <span class="stat-text"><strong>3600+</strong><small>Online bookings</small></span>
+        </div>
+        <span class="stat-div"></span>
+        <div class="stat">
+          <span class="stat-icon stat-cal"></span>
+          <span class="stat-text"><strong>3600+</strong><small>Online bookings</small></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Family photo, blending into the blue background -->
+      <img class="hero-photo" src="assets/hero-family.png" alt="Happy family moving">
+      <!-- Quote form card: 345x436, white, 8px rounded corners -->
+      <form class="quote-card" id="quoteForm">
+        <h2>Get a Free Moving Quote</h2>
+        <label class="field"><span class="f-icon f-user"></span><input type="text" placeholder="Your full name"></label>
+        <div class="field-row row-phone">
+          <label class="field field-code"><span class="f-icon f-phone"></span><input type="text" value="+91" readonly></label>
+          <label class="field"><input type="tel" placeholder="Mobile number"></label>
+        </div>
+        <label class="field"><span class="f-icon f-mail"></span><input type="email" placeholder="Your Email"></label>
+        <label class="field"><span class="f-icon f-pin"></span><input type="text" placeholder="Current starting city"></label>
+        <label class="field"><span class="f-icon f-pin"></span><input type="text" placeholder="City location"></label>
+        <div class="field-row row-pick">
+          <label class="field field-select"><select><option>1/2/3/4 or more</option><option>1</option><option>2</option><option>3</option><option>4 or more</option></select></label>
+          <label class="field"><span class="f-icon f-cal"></span><input type="text" placeholder="Select Date" onfocus="this.type='date'"></label>
+        </div>
+        <button type="submit" class="btn btn-quote">GET US A FREE QUOTE</button>
+        <p class="terms">By Pressing on Submit Button you are agree<br>with our <a href="#">Terms &amp; Service</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. PROCESS BAR (light blue #ECF6FE — half on the hero, half below it) ============ -->
+<div class="process-wrap">
+  <button class="p-scroll p-prev" aria-label="Scroll left">&lsaquo;</button>
+  <div class="process-bar">
+    <!-- step-doc: document/requirement icon -->
+    <div class="step"><span class="step-icon step-doc"></span><span class="step-label">Send your<br>requirement</span></div>
+    <span class="step-arrow">&rarr;</span>
+    <!-- step-tag: price tag icon -->
+    <div class="step"><span class="step-icon step-tag"></span><span class="step-label">Compare<br>Prices</span></div>
+    <span class="step-arrow">&rarr;</span>
+    <!-- step-hand: handshake/hire icon -->
+    <div class="step"><span class="step-icon step-hand"></span><span class="step-label">Hire<br>Professional</span></div>
+    <span class="step-arrow">&rarr;</span>
+    <!-- step-shield: shield check / worry-free icon -->
+    <div class="step"><span class="step-icon step-shield"></span><span class="step-label">Worry Free<br>Relocation</span></div>
+  </div>
+  <button class="p-scroll p-next" aria-label="Scroll right">&rsaquo;</button>
+</div>
+
+<!-- ============ 4. EXPECT (white) — heading + 3 feature cards ============ -->
+<section class="expect">
+  <div class="expect-head">
+    <h2>Everything You Expect from a<br>Professional Moving Company</h2>
+    <p>Moving an entire household is stressful, and we're here to help you with managing your relocation stress. We have experienced professionals who will assist you from start till end of the process of relocation</p>
+  </div>
+  <div class="expect-cards">
+    <div class="expect-card">
+      <span class="expect-icon expect-lotus"></span>
+      <h3>Stress Free Moving</h3>
+      <p>We connects you with verified packers and movers, helping you compare options and plan your move smoothly without confusion or unnecessary stress</p>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon expect-shield"></span>
+      <h3>Safety of your goods</h3>
+      <p>Movers listed on PackersDeal use quality packing materials and trained staff to handle goods carefully, helping reduce damage risks during transport</p>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon expect-coins"></span>
+      <h3>Pocket Friendly Pricings</h3>
+      <p>We lets you compare prices from multiple packers and movers, helping you choose affordable services with clear costs and no hidden charges</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. SERVICES (light blue #DDEFFD) — 3 cards with icons in round badges ============ -->
+<section class="services">
+  <h2 class="sec-title">Our Services</h2>
+  <p class="sec-sub">We offer reliable home, office, and vehicle relocation services with professional handling, safe transport, transparent pricing, and complete customer support</p>
+  <div class="service-cards">
+    <div class="service-card">
+      <!-- Real card photo: from media_library -->
+      <img src="assets/service-home.png" alt="Home Relocation">
+      <!-- 60px white badge with a 33px blue home icon inside -->
+      <!-- Real icon: workspace/user/media_library/image/47/4762ee0042da15b38168d11865b5530b397fa2b05565a3153da922dcc246749a.png -->
+      <span class="svc-badge svc-home"></span>
+      <h3>Home Relocation</h3>
+      <p>People move their homes for many reasons. It may be for work, family, or a better place to live. When this happens, they need to shift all household items safely and without stress</p>
+    </div>
+    <div class="service-card">
+      <img src="assets/service-office.png" alt="Office Relocation">
+      <!-- Real icon: workspace/user/media_library/image/26/26025f34527eae0632e1334a155a513c0e3572812540f3fed06dbe7f25fa11db.png -->
+      <span class="svc-badge svc-chair"></span>
+      <h3>Office Relocation</h3>
+      <p>Office relocation happens for many reasons. A common reason is business growth and the need for more space. Moving an office needs proper planning so work can continue smoothly</p>
+    </div>
+    <div class="service-card">
+      <img src="assets/service-vehicle.png" alt="Vehicle Relocation">
+      <!-- Real icon: workspace/user/media_library/image/b4/b4a7ea07ccecada049c2ddfd77735647f25605643b091daa7906d496237d4941.png -->
+      <span class="svc-badge svc-car"></span>
+      <h3>Vehicle Relocation</h3>
+      <p>Moving a vehicle to another city is not easy. It needs skill and the right tools. That is why professional help is important to move your vehicle safely to the new location</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. SEARCH BAND (black) ============ -->
+<section class="finder">
+  <div class="finder-inner">
+    <div class="finder-top">
+      <h2>Search Packers and Movers for Safe Shifting</h2>
+      <div class="exp-badge">
+        <!-- White laurel wreath SVG (Figma leaves) — hidden on desktop via CSS -->
+        <svg class="laurel l" viewBox="0 0 60 130" aria-hidden="true"><path d="M32 126 C22 95 24 55 34 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><g fill="#fff"><ellipse cx="20" cy="108" rx="11" ry="4.5" transform="rotate(-38 20 108)"/><ellipse cx="44" cy="108" rx="11" ry="4.5" transform="rotate(38 44 108)"/><ellipse cx="18" cy="86" rx="10" ry="4.5" transform="rotate(-42 18 86)"/><ellipse cx="44" cy="84" rx="10" ry="4.5" transform="rotate(42 44 84)"/><ellipse cx="19" cy="64" rx="9" ry="4" transform="rotate(-45 19 64)"/><ellipse cx="43" cy="62" rx="9" ry="4" transform="rotate(45 43 62)"/><ellipse cx="22" cy="43" rx="8" ry="4" transform="rotate(-48 22 43)"/><ellipse cx="41" cy="41" rx="8" ry="4" transform="rotate(48 41 41)"/><ellipse cx="27" cy="24" rx="7" ry="3.5" transform="rotate(-50 27 24)"/><ellipse cx="38" cy="22" rx="7" ry="3.5" transform="rotate(50 38 22)"/></g></svg>
+        <svg class="laurel r" viewBox="0 0 60 130" aria-hidden="true"><path d="M32 126 C22 95 24 55 34 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><g fill="#fff"><ellipse cx="20" cy="108" rx="11" ry="4.5" transform="rotate(-38 20 108)"/><ellipse cx="44" cy="108" rx="11" ry="4.5" transform="rotate(38 44 108)"/><ellipse cx="18" cy="86" rx="10" ry="4.5" transform="rotate(-42 18 86)"/><ellipse cx="44" cy="84" rx="10" ry="4.5" transform="rotate(42 44 84)"/><ellipse cx="19" cy="64" rx="9" ry="4" transform="rotate(-45 19 64)"/><ellipse cx="43" cy="62" rx="9" ry="4" transform="rotate(45 43 62)"/><ellipse cx="22" cy="43" rx="8" ry="4" transform="rotate(-48 22 43)"/><ellipse cx="41" cy="41" rx="8" ry="4" transform="rotate(48 41 41)"/><ellipse cx="27" cy="24" rx="7" ry="3.5" transform="rotate(-50 27 24)"/><ellipse cx="38" cy="22" rx="7" ry="3.5" transform="rotate(50 38 22)"/></g></svg>
+        <div class="exp-text"><strong>25</strong><span>years<br>Experience</span></div>
+      </div>
+    </div>
+    <form class="search-bar">
+      <input type="text" placeholder="Type City Name">
+      <input type="text" placeholder="Select a Service">
+      <button class="btn btn-search" type="submit">Search &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ 7. ABOUT (white) ============ -->
+<section class="about">
+  <h2>About The PackersDeal</h2>
+  <p>PackersDeal is a digital platform that makes it easy to find reliable packers and movers in India. It helps people and businesses connect with verified moving companies in one place, saving time and effort.</p>
+  <p>This platform allows users to compare professional packers and movers who offer services at fair and competitive prices. These service providers help with safe relocation of household items, office goods, and important belongings. The focus is on secure packing, careful handling, and smooth moving from start to finish. Many movers also provide insurance support for valuable items to give extra peace of mind.</p>
+  <p>All packers and movers listed on PackersDeal are verified and experienced. They use modern tools, proper packing materials, and trained staff to handle loading and unloading safely. Users can find services for home shifting, office relocation, vehicle transport, warehousing, pet relocation, plant moving, and door-to-door relocation. PackersDeal connects users directly with service providers, without unnecessary middlemen or agents</p>
+  <div class="tip-cards">
+    <!-- Number badge: 33px blue circle at left:9 top:10 -->
+    <!-- Real file: workspace/user/media_library/image/d6/d695f855a61be9d08676616be8ac5334f1e29b5d6dee13f5616e8dca16deb3a3.png -->
+    <div class="tip-card"><span class="tip-badge">01</span><div class="tip-text"><h3>Packing Tips</h3><a href="#">Packing tips &rarr;</a></div></div>
+    <div class="tip-card"><span class="tip-badge">02</span><div class="tip-text"><h3>Moving Tips</h3><a href="#">Moving tips &rarr;</a></div></div>
+    <div class="tip-card"><span class="tip-badge">03</span><div class="tip-text"><h3>Relocation Tips</h3><a href="#">Relocation tips &rarr;</a></div></div>
+  </div>
+</section>
+
+<!-- ============ 8. LOCATIONS (light blue #D3EAFD) + CALCULATOR (blue #B1DAFB) ============ -->
+<section class="locations">
+  <div class="loc-container">
+    <div class="loc-left">
+      <h2 class="locations-title">Popular Locations</h2>
+      <div class="city-pills">
+        <span class="pill"><img src="assets/pin.svg" alt="">Delhi</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Banglore</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Mumbai</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Nagpur</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Chennai</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Merut</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Surat</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">pune</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Coimbatore</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Jaipur</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">vadodra</span>
+        <span class="pill"><img src="assets/pin.svg" alt="">Bhopal</span>
+      </div>
+    </div>
+    <div class="calc-card">
+      <img class="calc-icon" src="assets/calculator.svg" alt="Calculator">
+      <div class="calc-text">
+        <h3>Packing Tips</h3>
+        <p>Get an instant estimate to your moving cost with our cost calculator</p>
+        <a href="#" class="btn-calc">Calculate Now <span class="calc-arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. TRUST (white) — 5 badges + testimonial ============ -->
+<section class="trust">
+  <div class="trust-badges">
+    <div class="badge"><span class="b-icon b-shield"></span><small>Verified Professional</small></div>
+    <span class="v-div"></span>
+    <div class="badge"><span class="b-icon b-coins"></span><small>Transparent Pricing</small></div>
+    <span class="v-div"></span>
+    <div class="badge"><span class="b-icon b-crown"></span><small>Wide Range of Services</small></div>
+    <span class="v-div"></span>
+    <span class="trust-hr"></span>
+    <div class="badge"><span class="b-icon b-pin"></span><small>Pan India Presence</small></div>
+    <span class="v-div"></span>
+    <!-- Headset icon: workspace/user/media_library/image/a4/a48ff9e2b757871f998385a80744e3249b4a4f3a6a9c30c62f923bea11164881.png -->
+    <div class="badge"><span class="b-icon b-headset"></span><small>Dedicated Customer Support</small></div>
+  </div>
+  <div class="testimonial-block">
+    <h3>What Our Customers say</h3>
+    <div class="testi-row">
+      <button class="t-arrow" aria-label="Previous">&lsaquo;</button>
+      <div class="testi-card">
+        <p>"PakersDeal made my move so easy! The movers were professional, on time and took great care of my belongings. Highly recommended"</p>
+        <div class="testi-foot">
+          <img src="assets/avatar.png" alt="Rahul Sharma">
+          <div class="testi-who"><strong>Rahul Sharma</strong><span>Delhi</span></div>
+          <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        </div>
+      </div>
+      <button class="t-arrow" aria-label="Next">&rsaquo;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FOOTER (dark #1D2027) ============ -->
+<footer class="footer">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="brand-col">
+      <!-- White logo: 204x48.71 Figma Frame 1443 -->
+      <img src="assets/logo-footer.svg" alt="PackersDeal" style="width:204px;height:auto">
+      <div class="social">
+        <h4>Follow us</h4>
+        <div class="social-row">
+          <!-- Facebook: solid blue | Instagram: white outline | LinkedIn: solid blue | X: white outline -->
+          <a href="#" class="soc soc-fb" aria-label="Facebook"></a>
+          <a href="#" class="soc soc-ig" aria-label="Instagram"></a>
+          <a href="#" class="soc soc-in" aria-label="LinkedIn"></a>
+          <a href="#" class="soc soc-x" aria-label="X"></a>
+        </div>
+      </div>
+      </div>
+      <img class="dmca" src="assets/dmca.svg" alt="DMCA Protected">
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4><img src="assets/1bb5a.svg" alt="">Quick Links</h4>
+        <a href="#">Home</a><a href="#">About Us</a><a href="#">FAQ</a><a href="#">Blog</a>
+        <a href="#">List Your Business</a><a href="#">Get Us Free Quote</a><a href="#">Contact Us</a>
+      </div>
+      <div class="foot-col">
+        <h4><img src="assets/d6a14.svg" alt="">Resources</h4>
+        <a href="#">Cost Calculator</a><a href="#">Household Item List</a><a href="#">Moving Tips</a>
+        <a href="#">Insurance Guide</a><a href="#">Packers and movers charges</a>
+      </div>
+      <div class="foot-col">
+        <h4><img src="assets/52c8a.svg" alt="">Services</h4>
+        <a href="#">Home Relocation</a><a href="#">Office Relocation</a><a href="#">Bike Transport</a>
+        <a href="#">International Relocation</a><a href="#">Car Transport</a><a href="#">Warehouse Services</a>
+      </div>
+      <div class="foot-col">
+        <h4><img src="assets/d37f1.svg" alt="">Legal</h4>
+        <a href="#">Privacy Policy</a><a href="#">Terms of Services</a><a href="#">Disclaimer</a>
+        <a href="#">Listing Terms</a><a href="#">Limitation of Liability</a>
+      </div>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-inner">
+      <h4><span class="disc-shield"></span>Disclaimer</h4>
+      <p>PackersDeal is an online aggregator platform that connects users with independent packers and movers. We does not provide packing, moving, transportation, or logistics services directly. All services are offered and carried out by third-party packers and movers listed on the platform. We does not take responsibility for the quality, pricing, delays, damages, or disputes related to services provided by the listed service providers. Users are advised to verify service details, charges, insurance, and terms directly with the packers and movers before finalizing any booking. We shall not be liable for any loss or damage arising from the use of third-party services</p>
+    </div>
+  </div>
+  <div class="copyright">Copyright &copy; PackersDeal All rights reserved</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

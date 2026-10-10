@@ -1,0 +1,29 @@
+<svg width="160" height="52" viewBox="0 0 160 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Dark Pill Box -->
+  <rect width="160" height="52" rx="10" fill="#0C1929" stroke="#182E47" stroke-width="1.5"/>
+
+  <!-- Left Green Badge with White Ring -->
+  <g id="dmca-badge">
+    <!-- Green Base Circle -->
+    <circle cx="27" cy="26" r="18" fill="#39D038" stroke="#FFFFFF" stroke-width="2.5"/>
+    
+    <!-- Shield shape inside green circle -->
+    <path d="M27 12.5C23.2 15.2 17.5 16.2 17.5 22.8C17.5 29.5 23 33.8 27 35.5C31 33.8 36.5 29.5 36.5 22.8C36.5 16.2 30.8 15.2 27 12.5Z" fill="#2EB82D"/>
+
+    <!-- Lock Shackle -->
+    <path d="M24 22V19.8C24 18.25 25.34 17 27 17C28.66 17 30 18.25 30 19.8V22" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    
+    <!-- Lock Body -->
+    <rect x="22" y="21.5" width="10" height="8.5" rx="1.5" fill="#FFFFFF"/>
+    
+    <!-- Keyhole -->
+    <circle cx="27" cy="25" r="1.1" fill="#2EB82D"/>
+    <polygon points="26.3,25.2 27.7,25.2 27.4,27.8 26.6,27.8" fill="#2EB82D"/>
+  </g>
+
+  <!-- DMCA Bold White Heading -->
+  <text x="54" y="27" fill="#FFFFFF" font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="20" letter-spacing="0.5">DMCA</text>
+
+  <!-- PROTECTED Subtitle Text -->
+  <text x="54.5" y="39.5" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="2.2">PROTECTED</text>
+</svg>

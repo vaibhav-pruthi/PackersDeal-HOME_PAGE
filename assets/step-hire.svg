@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="hire-professional">
+<!-- Two hands coming together (handshake style) -->
+<path d="M2 18L6 14H12L16 10L20 14H26L30 18" stroke="#005DD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6 14L4 22H8L12 18H20L24 22H28L26 14" stroke="#005DD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="16" cy="10" r="3" stroke="#005DD6" stroke-width="2"/>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 7">
+<circle id="Ellipse 11" cx="20" cy="20" r="20" fill="#005DD6"/>
+<g id="vaadin:facebook" clip-path="url(#clip0_0_41)">
+<path id="Vector" d="M18.7242 32.8V20.8H15.5242V16.48H18.7242V12.8C18.7242 9.92 20.6442 7.2 24.9642 7.2C26.7242 7.2 28.0042 7.36 28.0042 7.36L27.8442 11.36H25.1242C23.5242 11.36 23.3642 12 23.3642 13.28V16.48H28.0042L27.8442 20.8H23.3642V32.8H18.7242Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_41">
+<rect width="25.6" height="25.6" fill="white" transform="translate(7.2 7.2)"/>
+</clipPath>
+</defs>
+</svg>

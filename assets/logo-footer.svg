@@ -1,0 +1,28 @@
+<svg width="204" height="49" viewBox="0 0 204 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&amp;display=swap');
+  .logo-text { font-family: 'ADLaM Display', 'Quicksand', sans-serif; font-size: 34px; font-weight: 400; fill: #FFFFFF; }
+  .logo-d { font-family: 'ADLaM Display', 'Quicksand', sans-serif; font-size: 26px; font-weight: 400; fill: #FFFFFF; }
+</style>
+
+<!-- Packers Text -->
+<text x="0" y="30" class="logo-text">Packers</text>
+
+<!-- Hand Truck / Cart Frame -->
+<g transform="translate(109.89, 7.16)">
+  <path d="M11.6296 0.947893H2.13554C1.47962 0.947893 0.947893 1.47962 0.947893 2.13554C0.947893 2.79146 1.47962 3.32318 2.13554 3.32318H10.9605C11.7286 3.32318 12.4207 3.78654 12.7133 4.49661L18.6182 18.8246C18.8344 19.3492 18.8043 19.9429 18.5362 20.4429L15.5338 26.042C15.3823 26.3244 15.346 26.6544 15.4324 26.9629C15.6851 27.8654 16.8087 28.1727 17.4855 27.5245L22.0257 23.1762C22.6174 22.6095 22.7781 21.7268 22.4241 20.988L13.3394 2.02461C13.0241 1.3666 12.3593 0.947893 11.6296 0.947893Z" fill="#005DD6"/>
+  <path d="M32.8154 28.9563L45.0578 23.8565M12.7133 4.49661L18.6182 18.8246C18.8344 19.3492 18.8043 19.9429 18.5362 20.4429L15.5338 26.042C15.3823 26.3244 15.346 26.6544 15.4324 26.9629C15.6851 27.8654 16.8087 28.1727 17.4855 27.5245L22.0257 23.1762C22.6174 22.6095 22.7781 21.7268 22.4241 20.988L13.3394 2.02461C13.0241 1.3666 12.3593 0.947893 11.6296 0.947893H2.13554C1.47962 0.947893 0.947893 1.47962 0.947893 2.13554C0.947893 2.79146 1.47962 3.32318 2.13554 3.32318H10.9605C11.7286 3.32318 12.4207 3.78654 12.7133 4.49661Z" stroke="#005DD6" stroke-width="1.89579" stroke-linecap="round"/>
+</g>
+
+<!-- Blue Box with D Package -->
+<g transform="translate(138, 15) rotate(-23.5)">
+  <rect x="-12" y="-12" width="24" height="24" rx="2" fill="#005DD6"/>
+  <text x="0" y="8" text-anchor="middle" class="logo-d">D</text>
+</g>
+
+<!-- Cart Wheel -->
+<circle cx="132.74" cy="37.03" r="2.84" fill="none" stroke="#005DD6" stroke-width="2.84"/>
+
+<!-- eal Text -->
+<text x="160.66" y="30" class="logo-text">eal</text>
+</svg>
