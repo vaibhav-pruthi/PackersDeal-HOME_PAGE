@@ -1102,12 +1102,12 @@ a{text-decoration:none;color:inherit}
   .about h2{font-size:16px;line-height:20px;margin-bottom:7px}
   .about>p{display:block;width:100%;max-width:390px;font-size:8px;line-height:12px;margin-bottom:7px}
   .about>p:last-of-type{margin-bottom:12px}
-  .tip-cards{flex-direction:row;gap:5px;margin-top:0;max-width:390px}
-  .tip-card{width:126px;height:64px;padding:5px 6px;gap:4px;border-radius:5px}
-  .tip-badge{width:18px;height:18px;font-size:10px;line-height:18px}
+  .tip-cards{flex-direction:row;gap:8px;margin-top:0;max-width:390px;justify-content:center}
+  .tip-card{width:112px;height:58px;padding:5px 6px;gap:4px;border-radius:5px}
+  .tip-badge{width:16px;height:16px;font-size:8px;line-height:16px}
   .tip-text{width:auto}
-  .tip-card h3{font-size:9px;line-height:11px}
-  .tip-card a{font-size:7px;line-height:10px}
+  .tip-card h3{font-size:8px;line-height:10px}
+  .tip-card a{font-size:6px;line-height:9px}
 
   .locations{padding:18px 20px 12px}
   .loc-container{max-width:390px;gap:12px}
