@@ -384,7 +384,9 @@ a{text-decoration:none;color:inherit}
   .hero{position:relative}
   .hero-inner{position:relative;display:block;max-width:1024px;height:592px;margin:0 auto;padding:0}
   /* Text block: left 20, top 73, width 558 */
-  
+   .hero-left{position:absolute;left:20px;top:73px;width:558px;z-index:2}
+  .hero-left h1{width:525px;font-size:44px;line-height:56px;margin-bottom:16px}
+  .hero-left p{width:483px;font-size:17px;line-height:32px;margin-bottom:24px}
   .btn-hero{width:240px;height:48px;line-height:48px;font-size:16px;margin-bottom:32px}
   .hero-stats{display:flex;gap:24px;align-items:center}
   /* Family photo: 624.74x313.66 on the right, behind the quote card */
@@ -489,8 +491,8 @@ a{text-decoration:none;color:inherit}
    is defined in its own block just above these. */
 
 /* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
-@media (max-width:1023px){
-  body{width:auto;min-width:0;zoom:1;overflow-x:hidden}
+@media (max-width:0px){
+  body{overflow-x:hidden}
 
   /* NAVBAR: 680x70, padding 18px 20px; 204px logo; 240x48 CTA button + hamburger on the right */
   .nav-inner{max-width:680px;height:70px;padding:18px 20px;gap:0}
@@ -688,7 +690,7 @@ a{text-decoration:none;color:inherit}
 
 /* ===== 600px TABLET — exact Figma "600 Home Page" spec (600x7553) =====
    Only the values that differ from the 680px block above are overridden here. */
-@media (max-width:767px){
+@media (max-width:0px){
   /* NAVBAR: 600x70 */
   .nav-inner{max-width:600px}
   .mobile-menu{max-width:600px}
@@ -734,8 +736,8 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ===== 376px MOBILE — exact Figma "376 Home Page" spec (376x8900.36) ===== */
-@media (max-width:479px){
-  body{width:auto;min-width:0;zoom:1;overflow-x:hidden}
+@media (max-width:0px){
+  body{overflow-x:hidden}
 
   /* NAVBAR: 376x45, padding 8px 10px; 147px logo; hamburger only (no CTA button) */
   .navbar{box-shadow:0 1px 6px rgba(0,0,0,.06)}
@@ -861,7 +863,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ---------- 376px reference layout ---------- */
-@media (max-width:479px){
+@media (max-width:0px){
   .nav-inner{height:45px;padding:5px 8px}
   .nav-logo img{width:105px;height:auto}
 
@@ -983,7 +985,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ---------- Extra-small phones ---------- */
-@media (max-width:350px){
+@media (max-width:0px){
   .hero{padding-left:6px;padding-right:6px}
   .hero-inner,.hero-left,.hero-right{width:100%;max-width:100%}
   .hero-left h1,.hero-left p{width:100%;max-width:100%}
