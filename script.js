@@ -6,6 +6,17 @@
 // 5. Mobile tip-card titles  |  6. Process bar scroll buttons
 // ============================================================
 
+// Keep the desktop composition intact below 1100px without stacking it.
+function scaleDesktopCanvas() {
+  if (window.innerWidth >= 1 && window.innerWidth <= 1100) {
+    document.documentElement.style.setProperty('--desktop-scale', Math.min(1, window.innerWidth / 1100));
+  } else {
+    document.documentElement.style.removeProperty('--desktop-scale');
+  }
+}
+scaleDesktopCanvas();
+window.addEventListener('resize', scaleDesktopCanvas);
+
 // 1. Hamburger button: open/close the mobile menu
 const burger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');

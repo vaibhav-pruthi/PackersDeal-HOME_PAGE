@@ -360,14 +360,15 @@ a{text-decoration:none;color:inherit}
 .copyright{background:var(--foot);text-align:center;padding:24px 20px;
   font-size:14px;color:#B1DAFB}
 
-/* ===== 1024px DESKTOP — Figma "1280 Home Page" spec (1024x4047 page + 1024x697 footer) =====
-   Applies only between 1024px and 1100px. Wider screens keep the full desktop layout. */
-@media (min-width:1024px) and (max-width:1100px){
-  body{overflow-x:hidden}
+/* ===== COMPACT DESKTOP — stable non-collapsing canvas from 768px to 1100px =====
+   Smaller phones use the dedicated mobile layouts below. */
+@media (min-width:1px) and (max-width:1100px){
+  body{width:1100px;min-width:1100px;overflow-x:hidden;
+    zoom:var(--desktop-scale, 1)}
 
   /* NAVBAR: 1024x72.71, all links visible, Home shown active (as in the spec) */
   .nav-inner{max-width:1024px;height:72.71px;padding:0 20px;gap:24px}
-  .nav-links{display:flex;gap:24px}
+  .nav-links{display:flex;gap:24px;flex-shrink:0;white-space:nowrap}
   .hamburger{display:none}
   .mobile-menu{display:none}
   /* At 1024 the spec highlights Home: give the first link the active blue look… */
@@ -395,9 +396,9 @@ a{text-decoration:none;color:inherit}
   /* Quote card: 345x436 at left 661, top 82 of the page (= 9px inside the hero) */
   .quote-card{position:absolute;left:661px;top:9px;width:345px;height:436px;margin:0;z-index:3}
 
-  /* PROCESS BAR: 994x90 at left 12, top 541 of the page (half on the hero, half below it) */
-  .process-wrap{max-width:1024px;margin:-19px auto 0;padding:0 12px;position:relative;z-index:5}
-  .process-bar{width:994px;max-width:100%;height:90px;margin:0 auto}
+  /* PROCESS BAR: full-width 1100px canvas, scaled with the desktop layout */
+  .process-wrap{max-width:1100px;margin:-19px auto 0;padding:0;position:relative;z-index:5}
+  .process-bar{width:calc(100% - 20px);max-width:none;height:90px;margin:0 auto}
   .p-scroll{display:none} /* whole bar fits — no scroll buttons needed */
 
   /* EXPECT: 1024x873 starting at page 560; cards in a 2+1 layout */
@@ -489,7 +490,7 @@ a{text-decoration:none;color:inherit}
    is defined in its own block just above these. */
 
 /* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
-@media (max-width:1023px){
+@media (max-width:0px){
   body{overflow-x:hidden}
 
   /* NAVBAR: 680x70, padding 18px 20px; 204px logo; 240x48 CTA button + hamburger on the right */
@@ -688,7 +689,7 @@ a{text-decoration:none;color:inherit}
 
 /* ===== 600px TABLET — exact Figma "600 Home Page" spec (600x7553) =====
    Only the values that differ from the 680px block above are overridden here. */
-@media (max-width:767px){
+@media (max-width:0px){
   /* NAVBAR: 600x70 */
   .nav-inner{max-width:600px}
   .mobile-menu{max-width:600px}
@@ -734,7 +735,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ===== 376px MOBILE — exact Figma "376 Home Page" spec (376x8900.36) ===== */
-@media (max-width:479px){
+@media (max-width:0px){
   body{overflow-x:hidden}
 
   /* NAVBAR: 376x45, padding 8px 10px; 147px logo; hamburger only (no CTA button) */
@@ -861,7 +862,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ---------- 376px reference layout ---------- */
-@media (max-width:479px){
+@media (max-width:0px){
   .nav-inner{height:45px;padding:5px 8px}
   .nav-logo img{width:105px;height:auto}
 
@@ -983,7 +984,7 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ---------- Extra-small phones ---------- */
-@media (max-width:350px){
+@media (max-width:0px){
   .hero{padding-left:6px;padding-right:6px}
   .hero-inner,.hero-left,.hero-right{width:100%;max-width:100%}
   .hero-left h1,.hero-left p{width:100%;max-width:100%}
