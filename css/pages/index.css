@@ -444,11 +444,11 @@
   font-size: 24px;
   line-height: 34px;
   color: #fff;
-  text-align: left;
+  text-align: center;
 }
 .exp-badge {
   position: absolute;
-  left: 872px;
+  left: 892px;
   top: 19px;
   width: 179px;
   height: 125px;
@@ -457,26 +457,33 @@
   flex-shrink: 0;
   font-family: "Inter", sans-serif;
 }
+.experience-badge-image {
+  display: block;
+  width: 179px;
+  height: 125px;
+  object-fit: contain;
+}
 .exp-badge .laurel {
   display: block;
   position: absolute;
-  top: 0;
-  width: 100px;
-  height: 125px;
+  top: -7px;
+  width: 99.54px;
+  height: 99.54px;
 }
 .exp-badge .laurel.l {
-  left: -8px;
-  clip-path: inset(0 50% 0 0);
-  transform: none;
+  left: 76px;
+  transform: matrix(0.83, -0.56, 0.56, 0.83, 0, 0);
 }
 .exp-badge .laurel.r {
-  right: -8px;
-  clip-path: inset(0 0 0 50%);
-  transform: none;
+  left: -32px;
+  transform: matrix(-0.83, -0.56, -0.56, 0.83, 0, 0);
 }
 .exp-badge .exp-text {
   position: absolute;
-  inset: 0;
+  left: 44px;
+  top: -7px;
+  width: 90px;
+  height: 94px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1181,23 +1188,24 @@
   .exp-badge .laurel {
     display: block;
     position: absolute;
-    top: 0;
-    width: 100px;
-    height: 125px;
+    top: -7px;
+    width: 99.54px;
+    height: 99.54px;
   }
   .exp-badge .laurel.l {
-    left: -8px;
-    clip-path: inset(0 50% 0 0);
-    transform: none;
+    left: 76px;
+    transform: matrix(0.83, -0.56, 0.56, 0.83, 0, 0);
   }
   .exp-badge .laurel.r {
-    right: -8px;
-    clip-path: inset(0 0 0 50%);
-    transform: none;
+    left: -32px;
+    transform: matrix(-0.83, -0.56, -0.56, 0.83, 0, 0);
   }
   .exp-badge .exp-text {
     position: absolute;
-    inset: 0;
+    left: 44px;
+    top: -7px;
+    width: 90px;
+    height: 94px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1778,20 +1786,24 @@
   .exp-badge .laurel {
     display: block;
     position: absolute;
-    top: 0;
-    width: 100px;
-    height: 131px;
+    top: -7px;
+    width: 99.54px;
+    height: 99.54px;
   }
   .exp-badge .laurel.l {
-    left: 0;
+    left: 76px;
+    transform: matrix(0.83, -0.56, 0.56, 0.83, 0, 0);
   }
   .exp-badge .laurel.r {
-    right: 0;
-    transform: scaleX(-1);
+    left: -32px;
+    transform: matrix(-0.83, -0.56, -0.56, 0.83, 0, 0);
   }
   .exp-badge .exp-text {
     position: absolute;
-    inset: 0;
+    left: 44px;
+    top: -7px;
+    width: 90px;
+    height: 94px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2917,9 +2929,22 @@
     width: 88px;
     height: 64px;
   }
-  .exp-badge .laurel {
+  .experience-badge-image {
+    width: 88px;
     height: 64px;
-    width: 48px;
+  }
+  .exp-badge .laurel {
+    top: -4px;
+    height: 54px;
+    width: 54px;
+  }
+  .exp-badge .laurel.l {
+    left: 38px;
+    transform: matrix(0.83, -0.56, 0.56, 0.83, 0, 0);
+  }
+  .exp-badge .laurel.r {
+    left: -12px;
+    transform: matrix(-0.83, -0.56, -0.56, 0.83, 0, 0);
   }
   .exp-badge strong {
     font-size: 9px;
