@@ -1013,7 +1013,7 @@ a{text-decoration:none;color:inherit}
   html{background:#d9d4d4}
   body{width:430px;min-width:430px;margin:0 auto;background:#fff;zoom:1 !important;overflow-x:hidden}
 
-  .navbar{display:block;height:94px;position:static;margin:0;padding-top:54px;box-sizing:border-box}
+  .navbar{display:block;height:40px;position:static;margin:0;padding:0;box-sizing:border-box}
   .nav-inner{width:430px;max-width:none;height:40px;padding:6px 11px}
   .nav-logo img{width:118px;height:auto}
   .nav-inner .btn-nav{width:135px;height:28px;line-height:28px;font-size:9px;margin-left:auto}
