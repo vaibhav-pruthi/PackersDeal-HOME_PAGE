@@ -1020,7 +1020,7 @@ a{text-decoration:none;color:inherit}
   .hamburger{width:22px;height:18px;margin-left:12px}
   .hamburger span{height:2px;margin-bottom:5px}
 
-  .hero{height:512px;padding:0;background:#fff;overflow:hidden}
+  .hero{height:512px;padding:0;background:linear-gradient(to bottom,#dceffd 0 254px,#fff 254px 100%);overflow:hidden}
   .hero-inner{width:430px;max-width:none;height:512px;margin:0 auto;padding:0}
   .hero-left{top:8px;left:11px;width:386px}
   .hero-left h1{display:block;width:386px;font-size:24px;line-height:29px;margin:0 0 8px}
@@ -1060,5 +1060,13 @@ a{text-decoration:none;color:inherit}
   .step-label{font-size:11px;line-height:14px}
   .step-arrow{font-size:15px}
 
-  .expect{max-width:430px;padding:60px 20px 30px}
+  .expect{max-width:430px;padding:40px 20px 30px}
+  .expect-head{display:block;margin-bottom:20px}
+  .expect-head h2{max-width:390px;font-size:18px;line-height:24px;margin-bottom:8px}
+  .expect-head p{max-width:390px;font-size:11px;line-height:19px}
+  .expect-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .expect-card,.expect-card:last-child{width:187px;padding:10px;border-radius:7px}
+  .expect-icon{width:24px;height:24px;background-size:22px;margin-bottom:8px}
+  .expect-card h3{font-size:13px;line-height:18px;margin-bottom:5px}
+  .expect-card p{font-size:11px;line-height:19px}
 }
