@@ -361,8 +361,8 @@ a{text-decoration:none;color:inherit}
   font-size:14px;color:#B1DAFB}
 
 /* ===== 1024px DESKTOP — Figma "1280 Home Page" spec (1024x4047 page + 1024x697 footer) =====
-   Applies only between 1024px and 1279px. The three smaller breakpoints below are untouched. */
-@media (min-width:1024px) and (max-width:1279px){
+   Applies only between 1024px and 1100px. Wider screens keep the full desktop layout. */
+@media (min-width:1024px) and (max-width:1100px){
   body{overflow-x:hidden}
 
   /* NAVBAR: 1024x72.71, all links visible, Home shown active (as in the spec) */
