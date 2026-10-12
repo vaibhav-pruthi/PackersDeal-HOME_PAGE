@@ -1007,3 +1007,54 @@ a{text-decoration:none;color:inherit}
   .loc-container,.calc-card,.trust-hr,.disclaimer{width:100%;max-width:100%}
   .foot-inner,.foot-cols{max-width:100%}
 }
+
+/* ---------- 768px reference artboard ---------- */
+@media (min-width:768px) and (max-width:1023px){
+  html{background:#d9d4d4}
+  body{width:430px;min-width:430px;margin:0 auto;background:#fff;zoom:1 !important;overflow-x:hidden}
+
+  .navbar{height:40px}
+  .nav-inner{width:430px;max-width:none;height:40px;padding:6px 11px}
+  .nav-logo img{width:118px;height:auto}
+  .nav-inner .btn-nav{width:135px;height:28px;line-height:28px;font-size:9px;margin-left:auto}
+  .hamburger{width:22px;height:18px;margin-left:12px}
+  .hamburger span{height:2px;margin-bottom:5px}
+
+  .hero{height:512px;padding:0;background:#dceffd}
+  .hero-inner{width:430px;max-width:none;height:512px;margin:0 auto;padding:0}
+  .hero-left{top:3px;left:11px;width:386px}
+  .hero-left h1{width:386px;font-size:24px;line-height:29px;margin:0 0 8px}
+  .hero-left p{width:386px;max-width:none;font-size:11px;line-height:19px;margin:0 0 20px}
+  .btn-hero{width:135px;height:27px;line-height:27px;font-size:9px;margin:0 0 10px}
+  .hero-stats{width:205px;height:35px;gap:5px;justify-content:flex-start}
+  .stat{width:96px;gap:5px}
+  .stat-icon{width:22px;height:22px;background-size:14px}
+  .stat-text strong{font-size:15px;line-height:17px}
+  .stat-text small{font-size:8px;line-height:12px}
+  .stat-div{height:24px}
+
+  .hero-right{position:absolute;top:168px;left:0;width:408px;height:274px;padding:0;z-index:2}
+  .hero-photo{position:absolute;top:80px;left:0;width:223px;height:194px;max-width:none;object-fit:cover;border-radius:0}
+  .quote-card{position:absolute;top:0;left:222px;width:194px;height:244px;padding:6px;border-radius:5px}
+  .quote-card h2{width:180px;font-size:15px;line-height:18px;margin:0 auto 4px}
+  .quote-card>.field{width:180px;height:20px;padding:3px 4px;margin:0 auto 3px}
+  .field-row{gap:3px}
+  .row-phone .field-code{flex:0 0 42px}
+  .row-phone .field:last-child{flex:1}
+  .row-pick{gap:3px}
+  .row-pick .field:first-child,.row-pick .field:last-child{flex:1}
+  .field input,.field select{font-size:8px}
+  .f-icon{width:9px;height:9px}
+  .btn-quote{width:180px;height:24px;font-size:8px;margin:3px auto}
+  .terms{width:180px;font-size:7px;line-height:11px}
+
+  .process-wrap{width:430px;max-width:none;height:44px;margin:-70px auto 0;padding:0;gap:10px}
+  .process-bar{width:320px;height:44px;padding:5px 8px;gap:18px;border-radius:5px}
+  .p-scroll{width:34px;height:34px;font-size:25px}
+  .step{gap:4px}
+  .step-icon{width:34px;height:34px;background-size:20px}
+  .step-label{font-size:11px;line-height:14px}
+  .step-arrow{font-size:15px}
+
+  .expect{max-width:430px;padding:60px 20px 30px}
+}
