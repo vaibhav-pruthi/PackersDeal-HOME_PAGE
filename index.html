@@ -179,9 +179,15 @@
       </div>
     </div>
     <form class="search-bar">
-      <input type="text" placeholder="Type City Name">
-      <input type="text" placeholder="Select a Service">
-      <button class="btn btn-search" type="submit">Search &rarr;</button>
+      <label class="search-field search-city">
+        <input type="text" placeholder="Type City Name" aria-label="City name">
+        <span class="search-icon" aria-hidden="true"></span>
+      </label>
+      <label class="search-field search-service">
+        <input type="text" placeholder="Select a Service" aria-label="Service">
+        <span class="select-icon" aria-hidden="true"></span>
+      </label>
+      <button class="btn btn-search" type="submit">Search <span aria-hidden="true">&rarr;</span></button>
     </form>
   </div>
 </section>

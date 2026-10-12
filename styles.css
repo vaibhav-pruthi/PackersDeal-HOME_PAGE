@@ -221,21 +221,41 @@ a{text-decoration:none;color:inherit}
 .service-card p{font-size:15px;line-height:26px;color:var(--muted);margin:0 20px 24px}
 
 /* ---------- 7. FINDER (black search band) ---------- */
-.finder{background:#000;padding:36px 20px}
-.finder-inner{max-width:1100px;margin:0 auto}
-.finder-top{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:20px}
-.finder-top h2{font-family:'Quicksand',sans-serif;font-size:24px;color:#fff;text-align:center}
-.exp-badge{display:flex;align-items:center;gap:8px;color:#fff;flex-shrink:0}
-.exp-badge .laurel{display:none} /* shown only on tablet/mobile */
-.exp-badge .exp-text{display:contents} /* on desktop the badge text stays inline next to the heading */
-.exp-badge strong{font-size:20px;font-weight:500}
-.exp-badge span{font-size:14px;line-height:1.4;text-align:center}
-.search-bar{display:flex;gap:14px;background:#fff;border-radius:13px;
-  padding:12px;max-width:717px;margin:0 auto}
-.search-bar input{flex:1;height:42px;border:1px solid rgba(0,0,0,.4);
-  border-radius:10px;padding:0 20px;font-size:16px;font-family:'Inter'}
-.search-bar input::placeholder{color:rgba(0,0,0,.4)}
-.btn-search{height:42px;padding:0 32px;font-size:16px;border-radius:10px;white-space:nowrap}
+.finder{background:#000;height:184px;padding:0 48px}
+.finder-inner{position:relative;max-width:1184px;height:144px;margin:0 auto;padding:0 20px 20px}
+.finder-top{display:block;margin:0}
+.finder-top h2{position:absolute;left:20px;top:19px;width:519px;
+  font-family:'Quicksand',sans-serif;font-size:24px;line-height:34px;
+  color:#fff;text-align:left}
+.exp-badge{position:absolute;left:872px;top:19px;width:179px;height:125px;
+  display:block;color:#fff;flex-shrink:0;font-family:'Inter',sans-serif}
+.exp-badge .laurel{display:block;position:absolute;top:0;width:100px;height:125px}
+.exp-badge .laurel.l{left:-8px;clip-path:inset(0 50% 0 0);transform:none}
+.exp-badge .laurel.r{right:-8px;clip-path:inset(0 0 0 50%);transform:none}
+.exp-badge .exp-text{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;color:#fff;z-index:1}
+.exp-badge strong{width:25px;height:30px;font-size:20px;font-weight:500;line-height:30px}
+.exp-badge span{width:90px;height:64px;font-size:17px;font-weight:400;
+  line-height:32px;text-align:center}
+.search-bar{position:absolute;left:20px;top:70px;display:flex;gap:14px;
+  width:816px;height:78px;background:#fff;border-radius:13px;padding:15px 12px;
+  margin:0}
+.search-field{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;
+  width:276px;height:48px;padding:10px 20px;background:#fff;border:1px solid rgba(0,0,0,.4);
+  border-radius:10px}
+.search-field input{width:100%;height:32px;border:0;outline:0;padding:0;
+  font-size:17px;font-family:'Inter';color:#000;background:transparent}
+.search-field input::placeholder{color:rgba(0,0,0,.4)}
+.search-icon{width:24px;height:24px;flex:none;border:2px solid rgba(0,0,0,.4);border-radius:50%;
+  position:relative;margin-left:8px}
+.search-icon::after{content:"";position:absolute;width:9px;height:2px;
+  right:-6px;bottom:0;background:rgba(0,0,0,.4);transform:rotate(45deg);transform-origin:left center}
+.select-icon{width:24px;height:24px;flex:none;position:relative;margin-left:8px}
+.select-icon::after{content:"";position:absolute;left:5px;top:6px;width:10px;height:10px;
+  border-right:3px solid rgba(0,0,0,.4);border-bottom:3px solid rgba(0,0,0,.4);transform:rotate(45deg)}
+.btn-search{width:212px;height:48px;padding:10px;font-size:16px;border-radius:10px;
+  white-space:nowrap}
+.btn-search span{font-size:25px;line-height:20px;vertical-align:-2px;margin-left:4px}
 
 /* ---------- 8. ABOUT (white background, text + tip cards) ---------- */
 .about{max-width:1241px;margin:0 auto;padding:64px 20px}
@@ -392,14 +412,26 @@ a{text-decoration:none;color:inherit}
   .service-card img{height:150px}
   .svc-badge{top:118px}
 
-  /* FINDER: 1024x184 black band; horizontal 816x78 search form */
-  .finder{padding:28px 20px}
-  .finder-inner{max-width:984px}
-  .finder-top{margin-bottom:20px}
-  .search-bar{width:816px;max-width:100%;height:78px;margin:0 auto;
-    display:flex;align-items:center;gap:14px}
-  .search-bar input{height:54px}
-  .btn-search{height:54px;flex:none}
+  /* FINDER: compact 1024px reference layout with the form under the heading */
+  .finder{height:145px;padding:10px 5px 0}
+  .finder-inner{position:relative;width:100%;max-width:992px;height:135px;margin:0 auto}
+  .finder-top{display:block;margin:0}
+  .finder-top h2{position:absolute;left:48px;top:5px;width:auto;
+    font-size:20px;line-height:28px;text-align:left}
+  .exp-badge{position:absolute;right:40px;top:9px;width:179px;height:125px;
+    font-family:'Inter',sans-serif}
+  .exp-badge .laurel{display:block;position:absolute;top:0;width:100px;height:125px}
+  .exp-badge .laurel.l{left:-8px;clip-path:inset(0 50% 0 0);transform:none}
+  .exp-badge .laurel.r{right:-8px;clip-path:inset(0 0 0 50%);transform:none}
+  .exp-badge .exp-text{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:#fff;z-index:1}
+  .exp-badge strong{width:25px;height:30px;font-size:20px;font-weight:500;line-height:30px}
+  .exp-badge span{width:90px;height:64px;font-size:17px;font-weight:400;
+    line-height:32px;text-align:center}
+  .search-bar{position:absolute;left:48px;top:46px;width:635px;max-width:calc(100% - 300px);
+    height:60px;margin:0;padding:10px;display:flex;align-items:center;gap:10px}
+  .search-bar input{height:40px;padding:0 14px;font-size:14px;border-radius:8px}
+  .btn-search{height:40px;flex:0 0 165px;padding:0;font-size:14px;border-radius:8px}
 
   /* ABOUT: 1024x661; text in two columns + three 199.5x141 tip cards */
   .about{max-width:1024px;padding:56px 20px;display:flex;flex-wrap:wrap;gap:0 24px}
