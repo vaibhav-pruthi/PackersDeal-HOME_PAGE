@@ -1013,7 +1013,7 @@ a{text-decoration:none;color:inherit}
   html{background:#d9d4d4}
   body{width:430px;min-width:430px;margin:0 auto;background:#fff;zoom:1 !important;overflow-x:hidden}
 
-  .navbar{height:40px}
+  .navbar{height:40px;position:relative;top:39px;margin-bottom:39px}
   .nav-inner{width:430px;max-width:none;height:40px;padding:6px 11px}
   .nav-logo img{width:118px;height:auto}
   .nav-inner .btn-nav{width:135px;height:28px;line-height:28px;font-size:9px;margin-left:auto}
@@ -1022,9 +1022,9 @@ a{text-decoration:none;color:inherit}
 
   .hero{height:512px;padding:0;background:#dceffd}
   .hero-inner{width:430px;max-width:none;height:512px;margin:0 auto;padding:0}
-  .hero-left{top:3px;left:11px;width:386px}
+  .hero-left{top:8px;left:11px;width:386px}
   .hero-left h1{width:386px;font-size:24px;line-height:29px;margin:0 0 8px}
-  .hero-left p{width:386px;max-width:none;font-size:11px;line-height:19px;margin:0 0 20px}
+  .hero-left p{width:386px;max-width:none;font-size:10px;line-height:19px;margin:0 0 18px}
   .btn-hero{width:135px;height:27px;line-height:27px;font-size:9px;margin:0 0 10px}
   .hero-stats{width:205px;height:35px;gap:5px;justify-content:flex-start}
   .stat{width:96px;gap:5px}
@@ -1048,7 +1048,7 @@ a{text-decoration:none;color:inherit}
   .btn-quote{width:180px;height:24px;font-size:8px;margin:3px auto}
   .terms{width:180px;font-size:7px;line-height:11px}
 
-  .process-wrap{width:430px;max-width:none;height:44px;margin:-70px auto 0;padding:0;gap:10px}
+  .process-wrap{width:430px;max-width:none;height:44px;margin:-73px auto 0;padding:0;gap:10px}
   .process-bar{width:320px;height:44px;padding:5px 8px;gap:18px;border-radius:5px}
   .p-scroll{width:34px;height:34px;font-size:25px}
   .step{gap:4px}
