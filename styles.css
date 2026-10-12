@@ -380,9 +380,9 @@ a{text-decoration:none;color:inherit}
   .nav-links a.active::after{display:none}
   .nav-inner .btn-nav{width:240px;height:48px;line-height:48px;font-size:15px}
 
-  /* HERO: 1024x560 block = 72.71 navbar + 487 content */
+  /* HERO: keep the stats row inside the hero before the process bar */
   .hero{position:relative}
-  .hero-inner{position:relative;display:block;max-width:1024px;height:487px;margin:0 auto;padding:0}
+  .hero-inner{position:relative;display:block;max-width:1024px;height:580px;margin:0 auto;padding:0}
   /* Text block: left 20, top 73, width 558 */
   .hero-left{position:absolute;left:20px;top:73px;width:558px;z-index:2}
   .hero-left h1{width:525px;font-size:44px;line-height:56px;margin-bottom:16px}
@@ -396,8 +396,8 @@ a{text-decoration:none;color:inherit}
   /* Quote card: 345x436 at left 661, top 82 of the page (= 9px inside the hero) */
   .quote-card{position:absolute;left:661px;top:9px;width:345px;height:436px;margin:0;z-index:3}
 
-  /* PROCESS BAR: full-width 1100px canvas, scaled with the desktop layout */
-  .process-wrap{max-width:1100px;margin:-19px auto 0;padding:0;position:relative;z-index:5}
+  /* PROCESS BAR: follows the stats row instead of overlapping it */
+  .process-wrap{max-width:1100px;margin:0 auto;padding:0;position:relative;z-index:5}
   .process-bar{width:calc(100% - 20px);max-width:none;height:90px;margin:0 auto}
   .p-scroll{display:none} /* whole bar fits — no scroll buttons needed */
 
