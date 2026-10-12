@@ -382,13 +382,13 @@ a{text-decoration:none;color:inherit}
 
   /* HERO: keep the stats row inside the hero before the process bar */
   .hero{position:relative}
-  .hero-inner{position:relative;display:block;max-width:1024px;height:580px;margin:0 auto;padding:0}
+  .hero-inner{position:relative;display:block;max-width:1024px;height:592px;margin:0 auto;padding:0}
   /* Text block: left 20, top 73, width 558 */
   .hero-left{position:absolute;left:20px;top:73px;width:558px;z-index:2}
   .hero-left h1{width:525px;font-size:44px;line-height:56px;margin-bottom:16px}
   .hero-left p{width:483px;font-size:17px;line-height:32px;margin-bottom:24px}
   .btn-hero{width:240px;height:48px;line-height:48px;font-size:16px;margin-bottom:32px}
-  .hero-stats{display:flex;gap:24px}
+  .hero-stats{display:flex;gap:24px;align-items:center}
   /* Family photo: 624.74x313.66 on the right, behind the quote card */
   .hero-right{position:static}
   .hero-photo{position:absolute;left:379px;top:150px;width:625px;height:314px;
@@ -398,7 +398,8 @@ a{text-decoration:none;color:inherit}
 
   /* PROCESS BAR: follows the stats row instead of overlapping it */
   .process-wrap{max-width:1100px;margin:0 auto;padding:0;position:relative;z-index:5}
-  .process-bar{width:calc(100% - 20px);max-width:none;height:90px;margin:0 auto}
+  .process-bar{width:calc(100% - 20px);max-width:none;height:102px;margin:0 auto}
+  .process-bar .step-icon{width:60px;height:60px}
   .p-scroll{display:none} /* whole bar fits — no scroll buttons needed */
 
   /* EXPECT: 1024x873 starting at page 560; cards in a 2+1 layout */
