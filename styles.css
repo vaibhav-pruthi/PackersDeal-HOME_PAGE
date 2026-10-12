@@ -492,7 +492,7 @@ a{text-decoration:none;color:inherit}
 
 /* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
 @media (max-width:1023px){
-  body{width:auto;min-width:0;zoom:1;overflow-x:hidden}
+  body{width:auto;min-width:0;zoom:1 !important;overflow-x:hidden}
 
   /* NAVBAR: 680x70, padding 18px 20px; 204px logo; 240x48 CTA button + hamburger on the right */
   .nav-inner{max-width:680px;height:70px;padding:18px 20px;gap:0}
