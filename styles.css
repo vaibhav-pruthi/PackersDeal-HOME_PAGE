@@ -1079,4 +1079,78 @@ a{text-decoration:none;color:inherit}
   .svc-badge{top:43px;left:14px;width:34px;height:34px;background-size:18px}
   .service-card h3{font-size:14px;line-height:18px;margin:27px 14px 6px}
   .service-card p{font-size:10px;line-height:18px;color:#000;margin:0 14px 14px}
+
+  .finder{height:145px;padding:10px 8px 0}
+  .finder-inner{width:414px;max-width:100%;height:135px;padding:0}
+  .finder-top{display:flex;align-items:center;justify-content:space-between;gap:4px;width:414px;max-width:100%;margin:0 0 8px}
+  .finder-top h2{position:static;width:285px;font-size:14px;line-height:18px}
+  .exp-badge{position:relative;left:auto;top:auto;width:88px;height:64px}
+  .exp-badge .laurel{height:64px;width:48px}
+  .exp-badge strong{font-size:9px;line-height:12px}
+  .exp-badge span{font-size:8px;line-height:11px}
+  .search-bar{position:static;display:flex;width:414px;height:38px;padding:4px;gap:4px;border-radius:6px}
+  .search-bar input{height:28px;padding:3px 6px;font-size:9px;border-radius:4px}
+  .search-field{min-width:0;flex:1}
+  .btn-search{height:28px;flex:0 0 84px;font-size:9px;border-radius:4px}
+
+  .about{max-width:430px;padding:22px 20px 26px}
+  .about h2{font-size:16px;line-height:20px;margin-bottom:7px}
+  .about>p{max-width:390px;font-size:8px;line-height:12px;margin-bottom:7px}
+  .about>p:last-of-type{margin-bottom:12px}
+  .tip-cards{flex-direction:row;gap:5px;margin-top:0;max-width:390px}
+  .tip-card{width:126px;height:64px;padding:5px 6px;gap:4px;border-radius:5px}
+  .tip-badge{width:18px;height:18px;font-size:10px;line-height:18px}
+  .tip-text{width:auto}
+  .tip-card h3{font-size:9px;line-height:11px}
+  .tip-card a{font-size:7px;line-height:10px}
+
+  .locations{padding:18px 20px 12px}
+  .loc-container{max-width:390px;gap:12px}
+  .locations-title{font-size:12px;line-height:16px;margin-bottom:6px}
+  .city-pills{grid-template-columns:repeat(4,1fr);gap:3px}
+  .pill{width:auto;min-width:0;height:22px;font-size:7px;padding:3px 2px}
+  .calc-card{width:390px;min-height:80px;padding:10px}
+  .calc-icon{left:10px;top:10px;width:28px;height:28px}
+  .calc-card h3{font-size:11px;margin-left:38px;margin-bottom:3px}
+  .calc-card p{font-size:7px;line-height:10px;margin-left:38px;margin-bottom:5px}
+  .btn-calc{height:18px;line-height:16px;margin-left:38px;font-size:7px;padding:0 7px}
+
+  .trust{max-width:430px;padding:20px 10px 30px}
+  .trust-badges{flex-wrap:wrap;justify-content:center;gap:10px;max-width:350px;margin:0 auto 16px}
+  .badge{width:62px;gap:4px}
+  .b-icon{width:28px;height:28px;background-size:17px}
+  .badge small{font-size:6px;line-height:8px}
+  .v-div{display:none}
+  .trust-hr{display:block;width:350px;max-width:100%;height:1px;background:#828282}
+  .testimonial-block{margin-top:12px}
+  .testimonial-block h3{font-size:10px;margin-bottom:5px}
+  .testi-row{gap:3px}
+  .t-arrow{width:18px;height:24px;font-size:24px}
+  .testi-card{width:300px;max-width:calc(100% - 45px);padding:7px;border-radius:8px}
+  .testi-card>p{font-size:8px;line-height:12px;margin-bottom:6px}
+  .testi-foot{gap:5px}
+  .testi-foot img{width:24px;height:24px}
+  .testi-who strong{font-size:8px}
+  .testi-who span{font-size:7px;line-height:9px}
+  .stars{width:55px;height:11px}
+
+  .footer{padding:24px 10px 0}
+  .foot-inner{max-width:410px;padding:0 10px 18px;gap:24px}
+  .foot-brand{min-width:100%;display:flex;justify-content:space-between;align-items:flex-start}
+  .foot-brand .brand-col > img{width:105px;margin-bottom:8px}
+  .brand-col .social h4{font-size:9px;margin-bottom:5px}
+  .social-row{gap:5px}
+  .soc{width:18px;height:18px}
+  .foot-brand .dmca{width:72px;height:auto !important;margin-top:0 !important}
+  .foot-cols{gap:20px 12px;max-width:390px;margin-left:0}
+  .foot-col{width:189px;min-width:0;gap:5px}
+  .foot-col h4{font-size:10px;gap:4px;margin-bottom:3px}
+  .foot-col h4 img{width:17px;height:17px}
+  .foot-col a{font-size:7px;line-height:10px}
+  .disclaimer{max-width:390px;min-height:180px;padding:12px 10px;margin-top:10px}
+  .disclaimer-inner{flex-direction:row;gap:10px;align-items:flex-start}
+  .disclaimer h4{font-size:10px;gap:5px}
+  .disc-shield{width:28px;height:28px}
+  .disclaimer p{font-size:7px;line-height:11px;max-width:280px}
+  .copyright{padding:10px;font-size:7px}
 }
