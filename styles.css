@@ -1036,9 +1036,10 @@ a{text-decoration:none;color:inherit}
   .hero-photo{position:absolute;top:80px;left:0;width:430px;height:194px;max-width:none;object-fit:cover;border-radius:0}
   .quote-card{position:absolute;top:0;left:auto;right:12px;width:194px;height:244px;
     box-sizing:border-box;padding:6px;border-radius:5px}
-  .quote-card h2{width:180px;font-size:15px;line-height:18px;margin:0 auto 4px}
+  .quote-card h2{width:182px;font-size:13px;line-height:16px;white-space:nowrap;margin:0 auto 4px}
   .quote-card>.field{width:180px;height:20px;padding:3px 4px;margin:0 auto 3px}
-  .field-row{gap:3px}
+  .field-row{width:180px;height:20px;gap:3px;margin:0 auto 3px}
+  .field-row .field{height:20px;padding:3px 4px;margin:0}
   .row-phone .field-code{flex:0 0 42px}
   .row-phone .field:last-child{flex:1}
   .row-pick{gap:3px}
