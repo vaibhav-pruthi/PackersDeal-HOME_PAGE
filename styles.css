@@ -1020,7 +1020,7 @@ a{text-decoration:none;color:inherit}
   .hamburger{width:22px;height:18px;margin-left:12px}
   .hamburger span{height:2px;margin-bottom:5px}
 
-  .hero{height:512px;padding:0;background:#dceffd}
+  .hero{height:512px;padding:0;background:#dceffd;overflow:hidden}
   .hero-inner{width:430px;max-width:none;height:512px;margin:0 auto;padding:0}
   .hero-left{top:8px;left:11px;width:386px}
   .hero-left h1{width:386px;font-size:24px;line-height:29px;margin:0 0 8px}
@@ -1035,7 +1035,8 @@ a{text-decoration:none;color:inherit}
 
   .hero-right{position:absolute;top:168px;left:0;width:408px;height:274px;padding:0;z-index:2}
   .hero-photo{position:absolute;top:80px;left:0;width:223px;height:194px;max-width:none;object-fit:cover;border-radius:0}
-  .quote-card{position:absolute;top:0;left:222px;width:194px;height:244px;padding:6px;border-radius:5px}
+  .quote-card{position:absolute;top:0;left:auto;right:20px;width:194px;height:244px;
+    box-sizing:border-box;padding:6px;border-radius:5px}
   .quote-card h2{width:180px;font-size:15px;line-height:18px;margin:0 auto 4px}
   .quote-card>.field{width:180px;height:20px;padding:3px 4px;margin:0 auto 3px}
   .field-row{gap:3px}
