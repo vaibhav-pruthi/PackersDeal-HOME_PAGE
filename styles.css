@@ -1069,4 +1069,14 @@ a{text-decoration:none;color:inherit}
   .expect-icon{width:24px;height:24px;background-size:22px;margin-bottom:8px}
   .expect-card h3{font-size:13px;line-height:18px;margin-bottom:5px}
   .expect-card p{font-size:11px;line-height:19px}
+
+  .services{padding:20px 15px 26px;background:#dceffd}
+  .services .sec-title{max-width:none;margin:0 0 7px;text-align:left;font-size:18px;line-height:24px}
+  .services .sec-sub{max-width:none;margin:0 0 16px;text-align:left;font-size:10px;line-height:17px}
+  .service-cards{max-width:none;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+  .service-card{width:192px;flex:none;border-radius:7px}
+  .service-card img{height:60px;object-fit:cover}
+  .svc-badge{top:43px;left:14px;width:34px;height:34px;background-size:18px}
+  .service-card h3{font-size:14px;line-height:18px;margin:27px 14px 6px}
+  .service-card p{font-size:10px;line-height:18px;color:#000;margin:0 14px 14px}
 }
