@@ -1,0 +1,921 @@
+/* ============================================================
+   PackersDeal — styles.css (UPDATED 2026-10-09)
+   Exact Figma colors. No dark-mode overrides.
+   Sections: 1 base | 2 navbar | 3 hero | 4 process | 5 expect |
+   6 services | 7 finder | 8 about | 9 locations | 10 trust |
+   11 footer | 12 responsive (1024 desktop + 3 small breakpoints)
+============================================================ */
+
+/* ---------- 1. BASE STYLES (shared by all screen sizes) ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+:root {
+  --blue: #005dd6;
+  --grad: linear-gradient(90deg, #005dd6 46.63%, #6babff 100%);
+  --hero: #ddeffd;
+  --process: #ecf6fe;
+  --loc: #d3eafd;
+  --calc: #b1dafb;
+  --calc-bd: #b6dcfc;
+  --stat: #c5e4fe;
+  --foot: #1d2027;
+  --disc: #0f233d;
+  --muted: rgba(0, 0, 0, 0.6);
+}
+body {
+  font-family: "Inter", sans-serif;
+  color: #000;
+  background: #fff;
+}
+h1,
+h2,
+h3 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.btn {
+  display: inline-block;
+  background: var(--grad);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+}
+.sec-title {
+  font-size: 32px;
+  line-height: 45px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+/* Small paragraph under the Services heading (from Figma) */
+.sec-sub {
+  font-size: 17px;
+  line-height: 32px;
+  color: var(--muted);
+  text-align: center;
+  max-width: 720px;
+  margin: -20px auto 40px;
+}
+
+/* ---------- 2. NAVBAR (72.71px tall, white background) ---------- */
+.navbar {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+.nav-inner {
+  max-width: 1241px;
+  height: 72.71px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  
+}
+.nav-logo img {
+  width: 204px;
+  height: auto;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+ margin: 0  auto;
+}
+.nav-links a {
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+}
+/* Active nav link (Moving Tips): 51px blue underline, centered under the text (Figma Line 73) */
+.nav-links a.active {
+  color: var(--blue);
+}
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  width: 51px;
+  height: 2px;
+  background: var(--blue);
+}
+/* Services link: small blue outlined circle with a dropdown arrow inside */
+.drop-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  position: relative;
+  margin-left: 6px;
+  vertical-align: -2px;
+}
+.drop-icon::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 4px;
+  height: 4px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transform: rotate(45deg);
+}
+.btn-nav {
+  width: 240px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+  border-radius: 2px;
+}
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 20px;
+  background: #fff;
+}
+.mobile-menu a {
+  padding: 10px 0;
+  font-weight: 500;
+}
+.mobile-menu a.active {
+  color: var(--blue);
+}
+
+
+/* ---------- 11. FOOTER (dark background #1D2027) ---------- */
+.footer {
+  background: var(--foot);
+  color: #fff;
+}
+.foot-inner {
+  max-width: 1241px;
+  margin: 0 auto;
+  padding: 56px 20px 32px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.foot-brand {
+  flex: 1;
+  min-width: 220px;
+}
+.foot-brand .brand-col > img {
+  width: 204px;
+  height: auto;
+  margin-bottom: 24px;
+  display: block;
+}
+/* "DMCA Protected" badge image */
+.dmca {
+  height: 48px !important;
+  width: auto !important;
+  margin-top: 16px !important;
+  display: block;
+}
+/* Wrapper for the 4 footer link columns */
+.foot-cols {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.social h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-family: "Inter";
+}
+.social-row {
+  display: flex;
+  gap: 19px;
+}
+/* Social icons (40px): Facebook solid blue, Instagram white outline, LinkedIn solid blue, X white outline */
+.soc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.soc-fb {
+  background-image: url("../../assets/83967.svg");
+}
+.soc-ig {
+  background-image: url("../../assets/85c62.svg");
+}
+.soc-in {
+  background-image: url("../../assets/53d12.svg");
+}
+.soc-x {
+  background-image: url("../../assets/9af5f.svg");
+}
+.foot-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+}
+.foot-col h4 {
+  font-size: 16px;
+  font-family: "Inter";
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.foot-col h4 img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.foot-col a {
+  color: #b1dafb;
+  font-size: 14px;
+}
+/* Disclaimer panel - solid dark blue banner matching Figma / Image 1 */
+.disclaimer {
+  width: 100%;
+  background: var(--disc);
+  padding: 24px 20px;
+  margin: 28px 0 0 0;
+}
+.disclaimer-inner {
+  max-width: 1241px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.disclaimer h4 {
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  color: #fff;
+  letter-spacing: -0.2px;
+}
+/* Blue shield-check icon */
+.disc-shield {
+  width: 46px;
+  height: 46px;
+  display: inline-block;
+  flex-shrink: 0;
+  background-image: url("../../assets/561e5.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.disclaimer p {
+  font-size: 13.5px;
+  color: #a9d5fa;
+  line-height: 21px;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.1px;
+}
+/* Bottom copyright band */
+.copyright {
+  background: var(--foot);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 14px;
+  color: #b1dafb;
+}
+
+/* ===== COMPACT DESKTOP — stable non-collapsing canvas from 768px to 1100px =====
+   Smaller phones use the dedicated mobile layouts below. */
+@media (min-width: 1px) and (max-width: 1100px) {
+  body {
+    width: 1100px;
+    min-width: 1100px;
+    overflow-x: hidden;
+    zoom: var(--desktop-scale, 1);
+  }
+
+  /* NAVBAR: 1024x72.71, all links visible, Home shown active (as in the spec) */
+  .nav-inner {
+    max-width: 1024px;
+    height: 72.71px;
+    padding: 0 20px;
+    gap: 24px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .hamburger {
+    display: none;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  /* At 1024 the spec highlights Home: give the first link the active blue look… */
+  .nav-links a:first-child {
+    color: var(--blue);
+  }
+  .nav-links a:first-child::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    width: 51px;
+    height: 2px;
+    background: var(--blue);
+  }
+  /* …and remove the active look from Moving Tips (HTML class stays unchanged) */
+  .nav-links a.active {
+    color: inherit;
+  }
+  .nav-links a.active::after {
+    display: none;
+  }
+  .nav-inner .btn-nav {
+    width: 240px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 15px;
+  }
+
+  /* HERO: keep the stats row inside the hero before the process bar */
+  .hero {
+    position: relative;
+  }
+  .hero-inner {
+    position: relative;
+    display: block;
+    max-width: 1024px;
+    height: 592px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  /* Text block: left 20, top 73, width 558 */
+  .hero-left {
+    position: absolute;
+    left: 20px;
+    top: 73px;
+    width: 558px;
+    z-index: 2;
+  }
+  .hero-left h1 {
+    width: 525px;
+    font-size: 44px;
+    line-height: 56px;
+    margin-bottom: 16px;
+  }
+  .hero-left p {
+    width: 483px;
+    font-size: 17px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  .btn-hero {
+    width: 240px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  /* Family photo: 624.74x313.66 on the right, behind the quote card */
+  .hero-right {
+    position: static;
+  }
+  .hero-photo {
+    position: absolute;
+    left: 379px;
+    top: 150px;
+    width: 625px;
+    height: 314px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 12px;
+    z-index: 1;
+  }
+  /* Quote card: 345x436 at left 661, top 82 of the page (= 9px inside the hero) */
+  .quote-card {
+    position: absolute;
+    left: 661px;
+    top: 9px;
+    width: 345px;
+    height: 436px;
+    margin: 0;
+    z-index: 3;
+  }
+
+  /* PROCESS BAR: follows the stats row instead of overlapping it */
+  .process-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+  }
+  .process-bar {
+    width: calc(100% - 20px);
+    max-width: none;
+    height: 102px;
+    margin: 0 auto;
+  }
+  .process-bar .step-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .p-scroll {
+    display: none;
+  } /* whole bar fits — no scroll buttons needed */
+
+  /* EXPECT: 1024x873 starting at page 560; cards in a 2+1 layout */
+  .expect {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 110px 20px 60px;
+  }
+  .expect-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+  .expect-card {
+    width: 464px;
+    flex: none;
+  }
+
+  /* SERVICES: 1024x989; 388x367 cards in a 2+1 layout */
+  .services {
+    padding: 64px 20px;
+  }
+  .service-cards {
+    max-width: 1024px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+  .service-card {
+    width: 388px;
+    flex: none;
+  }
+  .service-card img {
+    height: 150px;
+  }
+  .svc-badge {
+    top: 118px;
+  }
+
+  /* FINDER: compact 1024px reference layout with the form under the heading */
+  .finder {
+    height: 145px;
+    padding: 10px 5px 0;
+  }
+  .finder-inner {
+    position: relative;
+    width: 100%;
+    max-width: 992px;
+    height: 135px;
+    margin: 0 auto;
+  }
+  .finder-top {
+    display: block;
+    margin: 0;
+  }
+  .finder-top h2 {
+    position: absolute;
+    left: 48px;
+    top: 5px;
+    width: auto;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+  }
+  .exp-badge {
+    position: absolute;
+    right: 40px;
+    top: 9px;
+    width: 179px;
+    height: 125px;
+    font-family: "Inter", sans-serif;
+  }
+  .exp-badge .laurel {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 125px;
+  }
+  .exp-badge .laurel.l {
+    left: -8px;
+    clip-path: inset(0 50% 0 0);
+    transform: none;
+  }
+  .exp-badge .laurel.r {
+    right: -8px;
+    clip-path: inset(0 0 0 50%);
+    transform: none;
+  }
+  .exp-badge .exp-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 1;
+  }
+  .exp-badge strong {
+    width: 25px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  .exp-badge span {
+    width: 90px;
+    height: 64px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+  }
+  .search-bar {
+    position: absolute;
+    left: 48px;
+    top: 46px;
+    width: 635px;
+    max-width: calc(100% - 300px);
+    height: 60px;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .search-bar input {
+    height: 40px;
+    padding: 0 14px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  .btn-search {
+    height: 40px;
+    flex: 0 0 165px;
+    padding: 0;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  /* ABOUT: 1024x661; text in two columns + three 199.5x141 tip cards */
+  .about {
+    max-width: 1024px;
+    padding: 56px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+  .about h2 {
+    width: 100%;
+  }
+  .about > p {
+    flex: 0 0 calc(50% - 12px);
+    max-width: none;
+    margin-bottom: 18px;
+  }
+  .about > p:last-of-type {
+    flex: 0 0 100%;
+  }
+  .tip-cards {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .tip-card {
+    position: relative;
+    width: 199.5px;
+    height: 141px;
+    flex: none;
+    padding: 0;
+  }
+  .tip-text {
+    position: absolute;
+    left: 9px;
+    top: 48px;
+    width: 181px;
+  }
+  .tip-card h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 4px;
+  }
+  .tip-card a {
+    font-size: 15px;
+  }
+
+  /* LOCATIONS: 1024x325; 666px city area + calculator side by side */
+  .locations {
+    padding: 48px 20px;
+  }
+  .loc-container {
+    max-width: 984px;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  .loc-left {
+    flex: 0 0 666px;
+    max-width: 666px;
+  }
+  .locations-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .city-pills {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    gap: 14px 22px;
+  }
+  .pill {
+    width: 150px;
+    height: 35px;
+  }
+  .calc-card {
+    flex: 0 0 288px;
+    width: 288px;
+    min-height: 224px;
+    padding: 24px 16px 24px 96px;
+  }
+  .calc-icon {
+    left: 14px;
+    top: 24px;
+  }
+
+  /* TRUST: 1024x464; five badges, a horizontal divider, then the testimonial */
+  .trust {
+    max-width: 1024px;
+    padding: 48px 20px;
+  }
+  .trust-badges {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 32px;
+  }
+  .v-div {
+    display: none;
+  }
+  .trust-badges .trust-hr {
+    display: none;
+  }
+  /* full-width line under the badges (added with ::after so no HTML change is needed) */
+  .trust-badges::after {
+    content: "";
+    flex: 0 0 100%;
+    height: 1px;
+    background: #828282;
+    margin-top: 4px;
+  }
+  .testimonial-block {
+    margin-top: 0;
+  }
+
+  /* FOOTER: 1024x697; brand + 4 link columns in one row */
+  .footer {
+    padding: 48px 20px 0;
+  }
+  .foot-inner {
+    max-width: 984px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .foot-brand {
+    flex: 0 0 200px;
+    min-width: 0;
+  }
+  .brand-col > img {
+    width: 200px;
+    height: auto;
+  }
+  .foot-brand .dmca {
+    width: 151px;
+  }
+  .foot-cols {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+    flex: 1;
+  }
+  .foot-col {
+    min-width: 0;
+    flex: 1;
+  }
+  /* Disclaimer panel: full-width dark blue band */
+  .disclaimer {
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+    margin: 32px 0 0;
+    background: var(--disc);
+    border-radius: 0;
+    padding: 24px 20px;
+    display: block;
+  }
+  .disclaimer-inner {
+    max-width: 984px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .disclaimer h4 {
+    flex: none;
+    margin: 0;
+  }
+  .disclaimer p {
+    max-width: none;
+  }
+  .copyright {
+    margin-top: 0;
+    padding: 24px 20px;
+    background: var(--foot);
+  }
+}
+
+/* ---------- 12. RESPONSIVE LAYOUTS ---------- */
+/* NOTE: the three small breakpoints below are taken exactly from the Figma specs —
+   680px "680 Home Page" (680x6519), 600px "600 Home Page" (600x7553),
+   376px mobile "376 Home Page" (376x8900.36).
+   A separate 1024px desktop layout (Figma "1280 Home Page" at 1024x4047)
+   is defined in its own block just above these. */
+
+/* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
+@media (max-width: 1023px) {
+  body {
+    width: auto;
+    min-width: 0;
+    zoom: 1 !important;
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR: 680x70, padding 18px 20px; 204px logo; 240x48 CTA button + hamburger on the right */
+  .nav-inner {
+    max-width: 680px;
+    height: 70px;
+    padding: 18px 20px;
+    gap: 0;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-logo img {
+    width: 204px;
+    height: 37.58px;
+  }
+  .nav-inner .btn-nav {
+    display: inline-block;
+    width: 240px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .hamburger {
+    display: block;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .mobile-menu {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  /* FOOTER: 680x1376.07, dark background, padding 60px 20px 0 */
+  .footer {
+    padding: 60px 20px 0;
+  }
+  .foot-inner {
+    max-width: 535px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  .foot-brand {
+    display: flex;
+    align-items: flex-end;
+    gap: 34px;
+    flex: none;
+    min-width: 0;
+  }
+  .brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+  .brand-col > img {
+    width: 204px;
+    height: 37.58px;
+    margin: 0;
+  }
+  .brand-col .social h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .social-row {
+    gap: 19px;
+  }
+  .foot-brand .dmca {
+    height: 52px !important;
+    width: 151px;
+    margin: 0 !important;
+    flex: none;
+  }
+  .foot-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 145px;
+    max-width: 535px;
+  }
+  .foot-col {
+    min-width: 0;
+  }
+  .foot-col h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  .foot-col h4 img {
+    width: 37px;
+    height: 37px;
+  }
+  .foot-col a {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  /* Disclaimer panel: 640x360, dark blue #0F233D */
+  
+}
