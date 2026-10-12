@@ -1010,7 +1010,7 @@ a{text-decoration:none;color:inherit}
 
 /* ---------- 768px reference artboard ---------- */
 @media (min-width:768px) and (max-width:1023px){
-  html{background:#d9d4d4}
+  html{background:#fff}
   body{width:430px;min-width:430px;margin:0 auto;background:#fff;zoom:1 !important;overflow-x:hidden}
 
   .navbar{display:block;height:40px;position:static;margin:0;padding:0;box-sizing:border-box}
@@ -1020,7 +1020,7 @@ a{text-decoration:none;color:inherit}
   .hamburger{width:22px;height:18px;margin-left:12px}
   .hamburger span{height:2px;margin-bottom:5px}
 
-  .hero{height:512px;padding:0;background:#dceffd;overflow:hidden}
+  .hero{height:512px;padding:0;background:#fff;overflow:hidden}
   .hero-inner{width:430px;max-width:none;height:512px;margin:0 auto;padding:0}
   .hero-left{top:8px;left:11px;width:386px}
   .hero-left h1{display:block;width:386px;font-size:24px;line-height:29px;margin:0 0 8px}
