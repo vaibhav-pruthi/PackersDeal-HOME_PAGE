@@ -1013,18 +1013,17 @@ a{text-decoration:none;color:inherit}
   html{background:#d9d4d4}
   body{width:430px;min-width:430px;margin:0 auto;background:#fff;zoom:1 !important;overflow-x:hidden}
 
-  .navbar{height:40px;position:relative;top:39px;margin-bottom:39px}
+  .navbar{display:none}
   .nav-inner{width:430px;max-width:none;height:40px;padding:6px 11px}
   .nav-logo img{width:118px;height:auto}
   .nav-inner .btn-nav{width:135px;height:28px;line-height:28px;font-size:9px;margin-left:auto}
   .hamburger{width:22px;height:18px;margin-left:12px}
   .hamburger span{height:2px;margin-bottom:5px}
 
-  .hero{height:512px;padding:0;background:#dceffd;overflow:hidden}
-  .hero-inner{width:430px;max-width:none;height:512px;margin:0 auto;padding:0}
-  .hero-left{top:8px;left:11px;width:386px}
-  .hero-left h1{width:386px;font-size:24px;line-height:29px;margin:0 0 8px}
-  .hero-left p{width:386px;max-width:none;font-size:10px;line-height:19px;margin:0 0 18px}
+  .hero{height:300px;padding:0;background:#dceffd;overflow:hidden}
+  .hero-inner{width:430px;max-width:none;height:300px;margin:0 auto;padding:0}
+  .hero-left{top:20px;left:11px;width:386px}
+  .hero-left h1,.hero-left p{display:none}
   .btn-hero{width:135px;height:27px;line-height:27px;font-size:9px;margin:0 0 10px}
   .hero-stats{width:205px;height:35px;gap:5px;justify-content:flex-start}
   .stat{width:96px;gap:5px}
@@ -1033,9 +1032,9 @@ a{text-decoration:none;color:inherit}
   .stat-text small{font-size:8px;line-height:12px}
   .stat-div{height:24px}
 
-  .hero-right{position:absolute;top:168px;left:0;width:408px;height:274px;padding:0;z-index:2}
-  .hero-photo{position:absolute;top:80px;left:0;width:223px;height:194px;max-width:none;object-fit:cover;border-radius:0}
-  .quote-card{position:absolute;top:0;left:auto;right:20px;width:194px;height:244px;
+  .hero-right{position:absolute;top:20px;left:0;width:430px;height:274px;padding:0;z-index:2}
+  .hero-photo{position:absolute;top:80px;left:0;width:430px;height:194px;max-width:none;object-fit:cover;border-radius:0}
+  .quote-card{position:absolute;top:0;left:auto;right:12px;width:194px;height:244px;
     box-sizing:border-box;padding:6px;border-radius:5px}
   .quote-card h2{width:180px;font-size:15px;line-height:18px;margin:0 auto 4px}
   .quote-card>.field{width:180px;height:20px;padding:3px 4px;margin:0 auto 3px}
@@ -1049,7 +1048,7 @@ a{text-decoration:none;color:inherit}
   .btn-quote{width:180px;height:24px;font-size:8px;margin:3px auto}
   .terms{width:180px;font-size:7px;line-height:11px}
 
-  .process-wrap{width:430px;max-width:none;height:44px;margin:-73px auto 0;padding:0;gap:10px}
+  .process-wrap{width:430px;max-width:none;height:44px;margin:-24px auto 0;padding:0;gap:10px}
   .process-bar{width:320px;height:44px;padding:5px 8px;gap:18px;border-radius:5px}
   .p-scroll{width:34px;height:34px;font-size:25px}
   .step{gap:4px}
