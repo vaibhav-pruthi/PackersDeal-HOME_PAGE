@@ -155,3 +155,180 @@ Use the existing CSS variables and typography rather than introducing duplicates
 - The finder badge uses the single `assets/Frame 5896.svg` image.
 - The old root `styles.css` and `script.js` were replaced by the split `css/` and `js/` files.
 - Recent UI work may be uncommitted. Inspect `git status` before making or committing further changes.
+
+## Conversation context — responsive breakpoint work (2026-10-14)
+
+### User's visual requirement
+
+The user supplied screenshots and a Figma composite showing separate target compositions:
+
+- **1024px:** desktop/tablet-wide composition with desktop navigation, hero text/photo/quote card arrangement, 2+1 cards, and the compact finder layout.
+- **768px:** a centered approximately `430px` reference artboard inside the wider viewport, matching the supplied “768 Home Page” screenshot.
+- **680px:** a full-width tablet composition matching the supplied “680 Home Page” Figma reference.
+- **600px:** smaller tablet layout with stacked cards and the existing 600px-specific overrides.
+- **376px and below:** mobile layout with centered text, mobile quote form, overlapping process bar, and stacked content.
+
+The important behavior is not just “responsive below 1023px”; each supplied width has a distinct visual target and must not inherit a conflicting layout.
+
+### Root causes found
+
+1. A compact-desktop rule existed in both `css/common/styles.css` and `css/pages/index.css` and forced:
+   - `body { width: 1100px; min-width: 1100px; }`
+   - desktop zoom/canvas behavior
+   - fixed finder dimensions
+   This rule leaked into tablet widths and caused broken or mixed layouts.
+2. `js/script.js` applied the same desktop scaling for every viewport up to 1100px, including tablet/mobile widths.
+3. The 768px reference-artboard media block was accidentally nested inside an earlier `max-width: 479px` block because of a missing closing brace. As a result, the 768px rules did not apply.
+4. DevTools can report a rounded viewport width while the CSS media engine evaluates a fractional width. A literal `1023px` boundary therefore caused a mixed state near 1023px and finder overflow.
+
+### Implemented responsive rules
+
+- Compact desktop canvas/scaling is limited to the 1023px–1100px desktop range.
+- Tablet/mobile rules begin at `1022.98px`.
+- The 768px reference artboard is active through `1022.98px`, guarded by a max-only exclusion for `767.98px`.
+- All responsive media queries use **max-width only**. Do not add `min-width` media-query conditions.
+- Use `.98px` upper boundaries for breakpoint precision, for example:
+
+```css
+@media (max-width: 1022.98px) { ... }
+@media (max-width: 1022.98px) and (not (max-width: 767.98px)) { ... }
+```
+
+- The compact desktop range is expressed without a `min-width` media query:
+
+```css
+@media (max-width: 1100.98px) and (not (max-width: 1022.98px)) { ... }
+```
+
+- JavaScript desktop scaling uses the equivalent numeric guard:
+
+```js
+window.innerWidth <= 1100.98 && window.innerWidth > 1022.98
+```
+
+### Validation performed
+
+The page was opened directly from `index.html` in the integrated browser and checked at:
+
+- `1100px` and `1023px`: compact desktop composition, desktop navbar, no horizontal overflow at 1023px.
+- `1022px` and `768px`: centered 430px reference artboard with mobile navbar controls.
+- `680px`: full-width tablet composition.
+- `600px`: small-tablet composition.
+- `376px`: mobile composition.
+
+Run `git diff --check` after future responsive edits. Check both CSS files because shared and page-specific media queries intentionally overlap.
+
+### Working-tree and editing notes
+
+- Do not revert unrelated existing modifications or untracked assets.
+- Do not commit or push unless explicitly requested.
+- Keep changes surgical; preserve the supplied content, assets, typography, and Figma-specific absolute positioning.
+- The user specifically requested the max-only `.98px` breakpoint convention; preserve that convention in future changes.
+
+## Conversation log — 2026-10-13
+
+The following records today's UI conversation and the resulting implementation changes.
+
+### 1. Move the experience badge slightly down
+
+User requested that the attached `25 years Experience` image be moved slightly lower.
+
+Change made in `css/pages/index.css`:
+
+```css
+.experience-badge-image {
+  transform: translateY(8px);
+}
+```
+
+The change was later removed when the badge was aligned to the Figma measurements.
+
+### 2. Increase spacing between the two laurel branches
+
+User requested more space between the two leaves/laurel branches.
+
+Change made in `assets/Frame 5896.svg`:
+
+- Left branch transform origin x changed from `75.9994` to `79.9994`.
+- Right branch transform origin x changed from `106.088` to `102.088`.
+
+This moves the branches outward and keeps the badge text centered.
+
+### 3. Match the 1024px finder layout to the reference/Figma design
+
+The user provided reference screenshots and Figma CSS measurements for the black finder band. The target layout is:
+
+- Outer finder frame: `1024px × 184px`, black background.
+- Inner frame: `1024px × 144px`, with `padding: 0 20px 20px`.
+- Experience badge: `179px × 125px`, positioned at `left: 845px`, `top: 17px`.
+- Heading: `519px × 34px`, Quicksand, `24px`, line-height `34px`, centered.
+- Search form: `816px × 78px`, white, border radius `13px`.
+- City field: `276px × 48px`.
+- Service field: `276px × 48px`.
+- Search button: `212px × 48px`.
+- Form gap: `14px`.
+
+The compact desktop finder rules in `css/pages/index.css` were updated to use these measurements. The outer `.finder` was subsequently set to `width: 1100px` because the `1px–1100px` responsive layout intentionally uses a fixed `1100px` canvas with `--desktop-scale`. This prevents a white strip from appearing at the right edge when the browser viewport is `1024px`.
+
+Current compact finder values include:
+
+```css
+.finder {
+  width: 1100px;
+  height: 184px;
+  padding: 20px 20px;
+}
+
+.finder-inner {
+  width: 984px;
+  height: 144px;
+}
+
+.finder-top h2 {
+  left: 0;
+  top: 4px;
+  width: 519px;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.exp-badge {
+  left: 825px;
+  top: -3px;
+  width: 179px;
+  height: 125px;
+}
+
+.search-bar {
+  left: 0;
+  top: 48px;
+  width: 816px;
+  height: 78px;
+}
+```
+
+Because the inner frame starts at `20px`, the computed browser position of the badge is `x: 845px` and `y: 17px`, matching the Figma target after the page's compact-canvas scaling.
+
+### 4. Validation performed
+
+- Opened `index.html` in the integrated browser.
+- Checked the finder at a `1024px` viewport.
+- Verified computed positions for the finder, heading, form, and badge.
+- Verified that the finder covers the full scaled canvas and no right-side white strip remains.
+- Ran VS Code problem checks on `css/pages/index.css` and `assets/Frame 5896.svg`; no errors were reported.
+
+### 5. Working-tree note
+
+At the end of today's work, the relevant modified files were:
+
+- `css/pages/index.css`
+- `assets/Frame 5896.svg`
+
+Untracked asset files already present in the working tree were:
+
+- `assets/Frame 5896.png`
+- `assets/leaves 1.png`
+- `assets/leaves 2.png`
+
+No commit or push was performed.

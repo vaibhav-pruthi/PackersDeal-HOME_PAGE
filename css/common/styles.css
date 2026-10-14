@@ -325,9 +325,9 @@ a {
   color: #b1dafb;
 }
 
-/* ===== COMPACT DESKTOP — stable non-collapsing canvas from 768px to 1100px =====
-   Smaller phones use the dedicated mobile layouts below. */
-@media (min-width: 1px) and (max-width: 1100px) {
+/* ===== COMPACT DESKTOP — stable non-collapsing canvas from 1024px to 1100px =====
+   The 768px/680px/600px/376px reference layouts remain fluid below this range. */
+@media (max-width: 1100.98px) and (min-width: 900px) {
   body {
     width: 1100px;
     min-width: 1100px;
@@ -805,7 +805,7 @@ a {
    is defined in its own block just above these. */
 
 /* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
-@media (max-width: 1023px) {
+@media (max-width: 899.98px) {
   body {
     width: auto;
     min-width: 0;
@@ -919,4 +919,136 @@ a {
   }
   /* Disclaimer panel: 640x360, dark blue #0F233D */
   
+}
+
+/* ===== 768px reference navbar ===== */
+@media (min-width: 768px) and (max-width: 899.98px) {
+  .nav-inner {
+    width: 430px;
+    max-width: 430px;
+    height: 45px;
+    padding: 5px 8px;
+    gap: 8px;
+  }
+  .nav-logo {
+    flex: 0 0 105px;
+    min-width: 0;
+  }
+  .nav-logo img {
+    width: 105px;
+    height: auto;
+  }
+  .nav-inner .btn-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 27px;
+    line-height: 27px;
+    margin-left: auto;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 8px;
+    white-space: nowrap;
+  }
+  .hamburger {
+    display: block;
+    flex: 0 0 24px;
+    width: 24px;
+    margin-left: 0;
+    padding: 0;
+  }
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+    margin: 4px auto;
+  }
+  .mobile-menu {
+    max-width: 430px;
+  }
+}
+
+/* ===== Frame 5943 / 376px mobile header + footer ===== */
+@media (max-width: 479px) {
+  .nav-inner {
+    width: 356px;
+    max-width: calc(100vw - 20px);
+    height: 31.02px;
+    padding: 0;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    flex: 0 0 147.29px;
+    min-width: 0;
+  }
+  .nav-logo img {
+    width: 147.29px;
+    height: auto;
+  }
+  .nav-inner .btn-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    margin-left: 0;
+    padding: 0;
+  }
+  .hamburger span {
+    width: 21px;
+    height: 2px;
+    margin: 5px auto;
+  }
+  .mobile-menu {
+    max-width: 376px;
+    padding: 8px 10px;
+  }
+
+  .footer {
+    padding: 50px 10px 0;
+  }
+  .foot-inner {
+    max-width: 356px;
+    gap: 36px;
+  }
+  .foot-brand {
+    gap: 18px;
+  }
+  .brand-col > img {
+    width: 105px;
+  }
+  .brand-col .social h4 {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .social-row {
+    gap: 6px;
+  }
+  .soc {
+    width: 20px;
+    height: 20px;
+  }
+  .foot-brand .dmca {
+    width: 75px;
+    height: 26px !important;
+  }
+  .foot-cols {
+    gap: 24px 28px;
+    max-width: 356px;
+  }
+  .foot-col h4 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .foot-col h4 img {
+    width: 18px;
+    height: 18px;
+  }
+  .foot-col a {
+    font-size: 9px;
+    line-height: 15px;
+  }
 }

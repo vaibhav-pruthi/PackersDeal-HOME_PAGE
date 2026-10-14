@@ -6,9 +6,9 @@
 // 5. Mobile tip-card titles  |  6. Process bar scroll buttons
 // ============================================================
 
-// Keep the desktop composition intact below 1100px without stacking it.
+// Keep the 1024px desktop composition intact up to the 1100px source canvas.
 function scaleDesktopCanvas() {
-  if (window.innerWidth >= 1 && window.innerWidth <= 1100) {
+  if (window.innerWidth <= 1100.98 && window.innerWidth >= 900) {
     document.documentElement.style.setProperty('--desktop-scale', Math.min(1, window.innerWidth / 1100));
   } else {
     document.documentElement.style.removeProperty('--desktop-scale');
