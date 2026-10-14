@@ -176,6 +176,10 @@
   display: inline-block;
   opacity: 0.65;
 }
+.f-icon::before,
+.f-icon::after {
+  content: none;
+}
 .f-user {
   background-image: url("../../assets/9f4f7.svg");
   opacity: 0.5;
@@ -1563,11 +1567,9 @@
   .f-icon {
     color: rgba(0, 0, 0, 0.4);
   }
-  .f-mail::before {
-    content: "\2709";
-  }
+  .f-mail::before,
   .f-pin::before {
-    content: "\2316";
+    content: none;
   }
   .row-phone {
     gap: 6px;
