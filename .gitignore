@@ -9,3 +9,5 @@ context.md
 *.p12
 node_modules/
 .vscode/
+.agents/
+skills-lock.json

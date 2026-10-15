@@ -1,20 +1,26 @@
-
-
 /* ============================================================
-   PACKERSDEAL SHARED STYLES
+   PACKERSDEAL SHARED STYLES (css/common/styles.css)
    Owns design tokens, reset, typography, navbar, footer, and
-   shared responsive chrome. Page sections live in pages/index.css.
+   responsive rules for navbar and footer across the exact 5 breakpoints:
+   1. 1280px to 1024px (Image 2)
+   2. 1024px to 768px (Image 3)
+   3. 768px to 680px (Image 4)
+   4. 680px to 600px (Image 5)
+   5. Less than 600px for mobile
 ============================================================ */
 
-/* ---------- 1. BASE STYLES ---------- */
+/* ---------- 1. BASE STYLES & DESIGN TOKENS ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
 :root {
   --blue: #005dd6;
   --grad: linear-gradient(90deg, #005dd6 46.63%, #6babff 100%);
@@ -28,26 +34,35 @@ html {
   --disc: #0f233d;
   --muted: rgba(0, 0, 0, 0.6);
 }
+
 body {
   font-family: "Inter", sans-serif;
   color: #000;
   background: #fff;
+  overflow-x: hidden;
 }
+
 h1,
 h2,
 h3 {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
 }
+
 img {
   max-width: 100%;
+  display: block;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--grad);
   color: #fff;
   font-weight: 600;
@@ -55,14 +70,21 @@ a {
   border: 0;
   cursor: pointer;
   text-align: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
+.btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
 .sec-title {
   font-size: 32px;
   line-height: 45px;
   text-align: center;
   margin-bottom: 32px;
 }
-/* Small paragraph under the Services heading (from Figma) */
+
 .sec-sub {
   font-size: 17px;
   line-height: 32px;
@@ -72,20 +94,15 @@ a {
   margin: -20px auto 40px;
 }
 
-/* ============================================================
-   NAVBAR
-   Base/desktop styles come first. Responsive navbar overrides are
-   grouped in the breakpoint sections below this shared component.
-============================================================ */
-
-/* ---------- 2. NAVBAR: DESKTOP / BASE ---------- */
+/* ---------- 2. NAVBAR: BASE / DESKTOP (>= 1280px) ---------- */
 .navbar {
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
 }
+
 .nav-inner {
   max-width: 1241px;
   height: 72.71px;
@@ -93,28 +110,45 @@ a {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
 }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .nav-logo img {
   width: 204px;
   height: auto;
-  display: block;
 }
+
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 32px;
-  margin: 0 auto;
 }
+
 .nav-links a {
   font-size: 15px;
   font-weight: 500;
+  color: #1d2027;
   position: relative;
   padding: 6px 0;
+  transition: color 0.2s ease;
 }
-/* Active nav link (Moving Tips): 51px blue underline, centered under the text (Figma Line 73) */
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
 .nav-links a.active {
   color: var(--blue);
 }
+
 .nav-links a.active::after {
   content: "";
   position: absolute;
@@ -125,7 +159,7 @@ a {
   height: 2px;
   background: var(--blue);
 }
-/* Services link: small blue outlined circle with a dropdown arrow inside */
+
 .drop-icon {
   display: inline-block;
   width: 16px;
@@ -136,6 +170,7 @@ a {
   margin-left: 6px;
   vertical-align: -2px;
 }
+
 .drop-icon::after {
   content: "";
   position: absolute;
@@ -147,145 +182,172 @@ a {
   border-bottom: 2px solid var(--blue);
   transform: rotate(45deg);
 }
+
 .btn-nav {
   width: 240px;
   height: 48px;
-  line-height: 48px;
   font-size: 15px;
   flex-shrink: 0;
+  border-radius: 12px;
 }
+
 .hamburger {
   display: none;
   background: none;
   border: 0;
   cursor: pointer;
+  padding: 8px;
 }
+
 .hamburger span {
   display: block;
   width: 26px;
   height: 3px;
-  background: #000;
+  background: #1d2027;
   margin: 5px 0;
   border-radius: 2px;
 }
+
 .mobile-menu {
   display: none;
   flex-direction: column;
-  gap: 4px;
-  padding: 12px 20px;
+  gap: 8px;
+  padding: 16px 20px;
   background: #fff;
+  border-top: 1px solid #f0f0f0;
 }
+
+.mobile-menu.open {
+  display: flex;
+}
+
 .mobile-menu a {
-  padding: 10px 0;
+  padding: 8px 0;
   font-weight: 500;
+  color: #1d2027;
 }
+
 .mobile-menu a.active {
   color: var(--blue);
 }
 
-/* ============================================================
-   FOOTER
-   Shared desktop/base footer styles live here so page stylesheets
-   only need to contain page-specific and breakpoint-specific rules.
-============================================================ */
+.mobile-menu .btn-nav {
+  margin-top: 8px;
+  width: 100%;
+}
 
-/* ---------- 11. FOOTER: DESKTOP / BASE ---------- */
+/* ---------- 3. FOOTER: BASE / DESKTOP (>= 1280px) ---------- */
 .footer {
   background: var(--foot);
   color: #fff;
 }
+
 .foot-inner {
   max-width: 1241px;
   margin: 0 auto;
   padding: 56px 20px 32px;
   display: flex;
+  justify-content: space-between;
   gap: 48px;
-  flex-wrap: wrap;
 }
+
 .foot-brand {
-  flex: 1;
+  flex: 0 0 240px;
+  display: flex;
+  flex-direction: column;
 }
-.foot-brand .brand-col > img {
+
+.brand-col > img {
   width: 204px;
   height: auto;
   margin-bottom: 24px;
-  display: block;
 }
-/* "DMCA Protected" badge image */
-.dmca {
-  height: 48px !important;
-  width: auto !important;
-  margin-top: 16px !important;
-  display: block;
-}
-/* Wrapper for the 4 footer link columns */
-.foot-cols {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  margin-left: auto;
-}
+
 .social h4 {
   font-size: 16px;
   margin-bottom: 12px;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
+  color: #fff;
 }
+
 .social-row {
   display: flex;
-  gap: 19px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
-/* Social icons (40px): Facebook solid blue, Instagram white outline, LinkedIn solid blue, X white outline */
+
 .soc {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   display: block;
-  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  transition: transform 0.2s ease;
 }
-.soc-fb {
-  background-image: url("../../assets/icons/social-facebook.svg");
+
+.soc:hover {
+  transform: translateY(-2px);
 }
-.soc-ig {
-  background-image: url("../../assets/icons/social-instagram.svg");
+
+.soc-fb { background-image: url("../../assets/icons/social-facebook.svg"); }
+.soc-ig { background-image: url("../../assets/icons/social-instagram.svg"); }
+.soc-in { background-image: url("../../assets/icons/social-linkedin.svg"); }
+.soc-x  { background-image: url("../../assets/icons/social-x.svg"); }
+
+.dmca {
+  height: 48px;
+  width: auto;
+  margin-top: 10px;
+  display: block;
 }
-.soc-in {
-  background-image: url("../../assets/icons/social-linkedin.svg");
+
+.foot-cols {
+  display: flex;
+  gap: 48px;
+  margin-left: auto;
 }
-.soc-x {
-  background-image: url("../../assets/icons/social-x.svg");
-}
+
 .foot-col {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .foot-col h4 {
   font-size: 16px;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
+  color: #fff;
 }
+
 .foot-col h4 img {
   width: 18px;
   height: 18px;
   object-fit: contain;
 }
+
 .foot-col a {
   color: #b1dafb;
   font-size: 14px;
+  transition: color 0.2s ease;
 }
-/* Disclaimer panel - solid dark blue banner matching Figma / Image 1 */
+
+.foot-col a:hover {
+  color: #fff;
+}
+
 .disclaimer {
   width: 100%;
   background: var(--disc);
   padding: 24px 20px;
-  margin: 28px 0 0 0;
+  margin-top: 28px;
 }
+
 .disclaimer-inner {
   max-width: 1241px;
   margin: 0 auto;
@@ -293,6 +355,7 @@ a {
   align-items: center;
   gap: 40px;
 }
+
 .disclaimer h4 {
   font-size: 20px;
   font-family: "Quicksand", sans-serif;
@@ -303,9 +366,8 @@ a {
   gap: 14px;
   flex-shrink: 0;
   color: #fff;
-  letter-spacing: -0.2px;
 }
-/* Blue shield-check icon */
+
 .disc-shield {
   width: 46px;
   height: 46px;
@@ -316,15 +378,15 @@ a {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .disclaimer p {
   font-size: 13.5px;
   color: #a9d5fa;
   line-height: 21px;
   font-weight: 400;
   margin: 0;
-  letter-spacing: 0.1px;
 }
-/* Bottom copyright band */
+
 .copyright {
   background: var(--foot);
   text-align: center;
@@ -334,725 +396,228 @@ a {
 }
 
 /* ============================================================
-   SHARED RESPONSIVE OVERRIDES
-   Order: compact desktop -> tablet -> mobile.
+   BREAKPOINT 1: 1280px to 1024px (Image 2)
+   Navbar has all links visible, Home active, 240x48 CTA button.
+   Footer has brand + 4 columns row.
 ============================================================ */
-
-/* ===== COMPACT DESKTOP — stable non-collapsing canvas from 1024px to 1100px =====
-   The 768px/680px/600px/376px reference layouts remain fluid below this range. */
-@media (max-width: 1100.98px) and (min-width: 900px) {
-  body {
-    width: 1100px;
-    overflow-x: hidden;
-    zoom: var(--desktop-scale, 1);
-  }
-
-  /* NAVBAR: 1024x72.71, all links visible, Home shown active (as in the spec) */
+@media (max-width: 1279.98px) and (min-width: 1024px) {
   .nav-inner {
     max-width: 1024px;
-    height: 72.71px;
     padding: 0 20px;
-    gap: 24px;
+    gap: 16px;
   }
   .nav-links {
     display: flex;
-    gap: 24px;
-    flex-shrink: 0;
-    white-space: nowrap;
+    gap: 20px;
+  }
+  .nav-links a {
+    font-size: 14.5px;
   }
   .hamburger {
     display: none;
   }
-  .mobile-menu {
-    display: none;
-  }
-  /* At 1024 the spec highlights Home: give the first link the active blue look… */
-  .nav-links a:first-child {
-    color: var(--blue);
-  }
-  .nav-links a:first-child::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    transform: translateX(-50%);
-    width: 51px;
-    height: 2px;
-    background: var(--blue);
-  }
-  /* …and remove the active look from Moving Tips (HTML class stays unchanged) */
-  .nav-links a.active {
-    color: inherit;
-  }
-  .nav-links a.active::after {
-    display: none;
-  }
-  .nav-inner .btn-nav {
-    width: 240px;
-    height: 48px;
-    line-height: 48px;
-    font-size: 15px;
-  }
-
-  /* HERO: keep the stats row inside the hero before the process bar */
-  .hero {
-    position: relative;
-  }
-  .hero-inner {
-    position: relative;
-    display: block;
-    max-width: 1024px;
-    height: 592px;
-    margin: 0 auto;
-    padding: 0;
-  }
-  /* Text block: left 20, top 73, width 558 */
-  .hero-left {
-    position: absolute;
-    left: 20px;
-    top: 73px;
-    width: 558px;
-    z-index: 2;
-  }
-  .hero-left h1 {
-    width: 525px;
-    font-size: 44px;
-    line-height: 56px;
-    margin-bottom: 16px;
-  }
-  .hero-left p {
-    width: 483px;
-    font-size: 17px;
-    line-height: 32px;
-    margin-bottom: 24px;
-  }
-  .btn-hero {
-    width: 240px;
-    height: 48px;
-    line-height: 48px;
-    font-size: 16px;
-    margin-bottom: 32px;
-  }
-  .hero-stats {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-  /* Family photo: 624.74x313.66 on the right, behind the quote card */
-  .hero-right {
-    position: static;
-  }
-  .hero-photo {
-    position: absolute;
-    left: 379px;
-    top: 150px;
-    width: 625px;
-    height: 314px;
-    object-fit: cover;
-    margin: 0;
-    border-radius: 12px;
-    z-index: 1;
-  }
-  /* Quote card: 345x436 at left 661, top 82 of the page (= 9px inside the hero) */
-  .quote-card {
-    position: absolute;
-    left: 661px;
-    top: 9px;
-    width: 345px;
-    height: 436px;
-    margin: 0;
-    z-index: 3;
-  }
-
-  /* PROCESS BAR: follows the stats row instead of overlapping it */
-  .process-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
-    z-index: 5;
-  }
-  .process-bar {
-    width: calc(100% - 20px);
-    max-width: none;
-    height: 102px;
-    margin: 0 auto;
-  }
-  .process-bar .step-icon {
-    width: 60px;
-    height: 60px;
-  }
-  .p-scroll {
-    display: none;
-  } /* whole bar fits — no scroll buttons needed */
-
-  /* EXPECT: 1024x873 starting at page 560; cards in a 2+1 layout */
-  .expect {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 110px 20px 60px;
-  }
-  .expect-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-  }
-  .expect-card {
-    width: 464px;
-    flex: none;
-  }
-
-  /* SERVICES: 1024x989; 388x367 cards in a 2+1 layout */
-  .services {
-    padding: 64px 20px;
-  }
-  .service-cards {
-    max-width: 1024px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-  }
-  .service-card {
-    width: 388px;
-    flex: none;
-  }
-  .service-card img {
-    height: 150px;
-  }
-  .svc-badge {
-    top: 118px;
-  }
-
-  /* FINDER: compact 1024px reference layout with the form under the heading */
-  .finder {
-    height: 145px;
-    padding: 10px 5px 0;
-  }
-  .finder-inner {
-    position: relative;
-    width: 100%;
-    max-width: 992px;
-    height: 135px;
-    margin: 0 auto;
-  }
-  .finder-top {
-    display: block;
-    margin: 0;
-  }
-  .finder-top h2 {
-    position: absolute;
-    left: 48px;
-    top: 5px;
-    width: auto;
-    font-size: 20px;
-    line-height: 28px;
-    text-align: left;
-  }
-  .exp-badge {
-    position: absolute;
-    right: 40px;
-    top: 9px;
-    width: 179px;
-    height: 125px;
-    font-family: "Inter", sans-serif;
-  }
-  .exp-badge .laurel {
-    display: block;
-    position: absolute;
-    top: -7px;
-    width: 99.54px;
-    height: 99.54px;
-  }
-  .exp-badge .laurel.l {
-    left: 76px;
-    transform: matrix(0.83, -0.56, 0.56, 0.83, 0, 0);
-  }
-  .exp-badge .laurel.r {
-    left: -32px;
-    transform: matrix(-0.83, -0.56, -0.56, 0.83, 0, 0);
-  }
-  .exp-badge .exp-text {
-    position: absolute;
-    left: 44px;
-    top: -7px;
-    width: 90px;
-    height: 94px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    z-index: 1;
-  }
-  .exp-badge strong {
-    width: 25px;
-    height: 30px;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 30px;
-  }
-  .exp-badge span {
-    width: 90px;
-    height: 64px;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 32px;
-    text-align: center;
-  }
-  .search-bar {
-    position: absolute;
-    left: 48px;
-    top: 46px;
-    width: 635px;
-    max-width: calc(100% - 300px);
-    height: 60px;
-    margin: 0;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .search-bar input {
-    height: 40px;
-    padding: 0 14px;
+  .btn-nav {
+    width: 220px;
+    height: 46px;
     font-size: 14px;
-    border-radius: 8px;
-  }
-  .btn-search {
-    height: 40px;
-    flex: 0 0 165px;
-    padding: 0;
-    font-size: 14px;
-    border-radius: 8px;
-  }
-
-  /* ABOUT: 1024x661; text in two columns + three 199.5x141 tip cards */
-  .about {
-    max-width: 1024px;
-    padding: 56px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 24px;
-  }
-  .about h2 {
-    width: 100%;
-  }
-  .about > p {
-    flex: 0 0 calc(50% - 12px);
-    max-width: none;
-    margin-bottom: 18px;
-  }
-  .about > p:last-of-type {
-    flex: 0 0 100%;
-  }
-  .tip-cards {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 24px;
-    margin-top: 24px;
-  }
-  .tip-card {
-    position: relative;
-    width: 199.5px;
-    height: 141px;
-    flex: none;
-    padding: 0;
-  }
-  .tip-text {
-    position: absolute;
-    left: 9px;
-    top: 48px;
-    width: 181px;
-  }
-  .tip-card h3 {
-    font-size: 20px;
-    line-height: 28px;
-    margin-bottom: 4px;
-  }
-  .tip-card a {
-    font-size: 15px;
-  }
-
-  /* LOCATIONS: 1024x325; 666px city area + calculator side by side */
-  .locations {
-    padding: 48px 20px;
-  }
-  .loc-container {
-    max-width: 984px;
-    margin: 0 auto;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-  }
-  .loc-left {
-    flex: 0 0 666px;
-    max-width: 666px;
-  }
-  .locations-title {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
-  .city-pills {
-    display: grid;
-    grid-template-columns: repeat(4, 150px);
-    gap: 14px 22px;
-  }
-  .pill {
-    width: 150px;
-    height: 35px;
-  }
-  .calc-card {
-    flex: 0 0 288px;
-    width: 288px;
-    min-height: 224px;
-    padding: 24px 16px 24px 96px;
-  }
-  .calc-icon {
-    left: 14px;
-    top: 24px;
-  }
-
-  /* TRUST: 1024x464; five badges, a horizontal divider, then the testimonial */
-  .trust {
-    max-width: 1024px;
-    padding: 48px 20px;
-  }
-  .trust-badges {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 36px;
-    margin-bottom: 32px;
-  }
-  .v-div {
-    display: none;
-  }
-  .trust-badges .trust-hr {
-    display: none;
-  }
-  /* full-width line under the badges (added with ::after so no HTML change is needed) */
-  .trust-badges::after {
-    content: "";
-    flex: 0 0 100%;
-    height: 1px;
-    background: #828282;
-    margin-top: 4px;
-  }
-  .testimonial-block {
-    margin-top: 0;
-  }
-
-  /* FOOTER: 1024x697; brand + 4 link columns in one row */
-  .footer {
-    padding: 48px 20px 0;
   }
   .foot-inner {
-    max-width: 984px;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  .foot-brand {
-    flex: 0 0 200px;
-  }
-  .brand-col > img {
-    width: 200px;
-    height: auto;
-  }
-  .foot-brand .dmca {
-    width: 151px;
+    max-width: 1024px;
+    gap: 32px;
   }
   .foot-cols {
-    display: flex;
-    flex-wrap: nowrap;
     gap: 32px;
-    flex: 1;
-  }
-  .foot-col {
-    flex: 1;
-  }
-  /* Disclaimer panel: full-width dark blue band */
-  .disclaimer {
-    width: 100%;
-    max-width: none;
-    min-height: auto;
-    margin: 32px 0 0;
-    background: var(--disc);
-    border-radius: 0;
-    padding: 24px 20px;
-    display: block;
   }
   .disclaimer-inner {
-    max-width: 984px;
-    margin: 0 auto;
-    display: flex;
-    gap: 32px;
-    align-items: center;
-  }
-  .disclaimer h4 {
-    flex: none;
-    margin: 0;
-  }
-  .disclaimer p {
-    max-width: none;
-  }
-  .copyright {
-    margin-top: 0;
-    padding: 24px 20px;
-    background: var(--foot);
+    max-width: 1024px;
+    gap: 24px;
   }
 }
 
-/* ===== TABLET / MOBILE SHARED OVERRIDES =====
-   The following breakpoint groups are taken exactly from the Figma specs —
-   680px "680 Home Page" (680x6519), 600px "600 Home Page" (600x7553),
-   376px mobile "376 Home Page" (376x8900.36).
-   A separate 1024px desktop layout (Figma "1280 Home Page" at 1024x4047)
-   is defined in its own block just above these. */
-
-/* ===== TABLET: 680px / 900px reference range ===== */
-@media (max-width: 899.98px) {
-  body {
-    width: auto;
-    zoom: 1 !important;
-    overflow-x: hidden;
-  }
-
-  /* NAVBAR: 680x70, padding 18px 20px; 204px logo; 240x48 CTA button + hamburger on the right */
+/* ============================================================
+   BREAKPOINT 2: 1024px to 768px (Image 3)
+   Navbar has logo on left, CTA button + hamburger on right.
+   Footer has brand + 2x2 grid of link columns.
+============================================================ */
+@media (max-width: 1023.98px) and (min-width: 750px) {
   .nav-inner {
-    max-width: 680px;
     height: 70px;
-    padding: 18px 20px;
-    gap: 0;
+    padding: 0 20px;
   }
   .nav-links {
     display: none;
   }
-  .nav-logo img {
-    width: 204px;
-    height: 37.58px;
-  }
-  .nav-inner .btn-nav {
-    display: inline-block;
-    width: 240px;
-    height: 48px;
-    line-height: 48px;
-    font-size: 16px;
-    margin-left: auto;
-    flex-shrink: 0;
-  }
   .hamburger {
     display: block;
-    flex-shrink: 0;
     margin-left: 12px;
   }
-  .mobile-menu {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-  .mobile-menu.open {
-    display: flex;
-  }
-
-  /* FOOTER: 680x1376.07, dark background, padding 60px 20px 0 */
-  .footer {
-    padding: 60px 20px 0;
+  .nav-inner .btn-nav {
+    display: inline-flex;
+    width: 210px;
+    height: 44px;
+    font-size: 14px;
+    margin-left: auto;
   }
   .foot-inner {
-    max-width: 535px;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
     flex-direction: column;
-    gap: 64px;
-  }
-  .foot-brand {
-    display: flex;
-    align-items: flex-end;
-    gap: 34px;
-    flex: none;
-  }
-  .brand-col {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-  }
-  .brand-col > img {
-    width: 204px;
-    height: 37.58px;
-    margin: 0;
-  }
-  .brand-col .social h4 {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 30px;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-  .social-row {
-    gap: 19px;
-  }
-  .foot-brand .dmca {
-    height: 52px !important;
-    width: 151px;
-    margin: 0 !important;
-    flex: none;
+    gap: 40px;
   }
   .foot-cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px 145px;
-    max-width: 535px;
-  }
-  .foot-col h4 {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 30px;
-  }
-  .foot-col h4 img {
-    width: 37px;
-    height: 37px;
-  }
-  .foot-col a {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 28px;
-  }
-  /* Disclaimer panel: 640x360, dark blue #0F233D */
-  
-}
-
-/* ===== TABLET: 768px reference navbar ===== */
-@media (max-width: 899.98px) and (min-width: 768px) {
-  .nav-inner {
-    width: 430px;
-    max-width: 430px;
-    height: 45px;
-    padding: 5px 8px;
-    gap: 8px;
-  }
-  .nav-logo {
-    flex: 0 0 105px;
-  }
-  .nav-logo img {
-    width: 105px;
-    height: auto;
-  }
-  .nav-inner .btn-nav {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 135px;
-    height: 27px;
-    line-height: 27px;
-    margin-left: auto;
-    padding: 0 10px;
-    border-radius: 5px;
-    font-size: 8px;
-    white-space: nowrap;
-  }
-  .hamburger {
-    display: block;
-    flex: 0 0 24px;
-    width: 24px;
+    gap: 32px 48px;
     margin-left: 0;
-    padding: 0;
+    width: 100%;
   }
-  .hamburger span {
-    width: 20px;
-    height: 2px;
-    margin: 4px auto;
-  }
-  .mobile-menu {
-    max-width: 430px;
+  .disclaimer-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
   }
 }
 
-/* ===== MOBILE: 376px header + footer ===== */
-@media (max-width: 479px) {
+/* ============================================================
+   BREAKPOINT 3: 768px to 680px (Image 4)
+   Navbar has logo, CTA button, and hamburger.
+   Footer has brand + 2x2 grid.
+============================================================ */
+@media (max-width: 749.98px) and (min-width: 680px) {
   .nav-inner {
-    width: 356px;
-    max-width: calc(100vw - 20px);
-    height: 31.02px;
-    padding: 0;
-    gap: 0;
-    justify-content: space-between;
+    height: 66px;
+    padding: 0 16px;
   }
-  .nav-logo {
-    flex: 0 0 147.29px;
-  }
-  .nav-logo img {
-    width: 147.29px;
-    height: auto;
-  }
-  .nav-inner .btn-nav {
+  .nav-links {
     display: none;
   }
   .hamburger {
     display: block;
-    flex: 0 0 30px;
-    width: 30px;
-    height: 30px;
-    margin-left: 0;
-    padding: 0;
+    margin-left: 10px;
   }
-  .hamburger span {
-    width: 21px;
-    height: 2px;
-    margin: 5px auto;
-  }
-  .mobile-menu {
-    max-width: 376px;
-    padding: 8px 10px;
-  }
-
-  .footer {
-    padding: 50px 10px 0;
+  .nav-inner .btn-nav {
+    display: inline-flex;
+    width: 190px;
+    height: 42px;
+    font-size: 13.5px;
+    margin-left: auto;
   }
   .foot-inner {
-    max-width: 356px;
+    flex-direction: column;
     gap: 36px;
-  }
-  .foot-brand {
-    gap: 18px;
-  }
-  .brand-col > img {
-    width: 105px;
-  }
-  .brand-col .social h4 {
-    font-size: 10px;
-    line-height: 14px;
-  }
-  .social-row {
-    gap: 6px;
-  }
-  .soc {
-    width: 20px;
-    height: 20px;
-  }
-  .foot-brand .dmca {
-    width: 75px;
-    height: 26px !important;
+    padding: 40px 16px 24px;
   }
   .foot-cols {
-    gap: 24px 28px;
-    max-width: 356px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 36px;
+    margin-left: 0;
   }
-  .foot-col h4 {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .foot-col h4 img {
-    width: 18px;
-    height: 18px;
-  }
-  .foot-col a {
-    font-size: 9px;
-    line-height: 15px;
+  .disclaimer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 }
 
+/* ============================================================
+   BREAKPOINT 4: 680px to 600px (Image 5)
+   Navbar has logo, compact CTA button, and hamburger.
+   Footer has brand + 2x2 grid.
+============================================================ */
+@media (max-width: 679.98px) and (min-width: 600px) {
+  .nav-inner {
+    height: 62px;
+    padding: 0 16px;
+  }
+  .nav-logo img {
+    width: 170px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    margin-left: 8px;
+  }
+  .nav-inner .btn-nav {
+    display: inline-flex;
+    width: 165px;
+    height: 38px;
+    font-size: 12px;
+    margin-left: auto;
+  }
+  .foot-inner {
+    flex-direction: column;
+    gap: 32px;
+    padding: 36px 16px 20px;
+  }
+  .foot-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-left: 0;
+  }
+  .disclaimer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ============================================================
+   BREAKPOINT 5: Less than 600px (Mobile)
+============================================================ */
+@media (max-width: 599.98px) {
+  .nav-inner {
+    height: 54px;
+    padding: 0 14px;
+  }
+  .nav-logo img {
+    width: 150px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-inner .btn-nav {
+    display: none;
+  }
+  .mobile-menu .btn-nav {
+    display: flex;
+  }
+  .foot-inner {
+    flex-direction: column;
+    gap: 28px;
+    padding: 32px 14px 20px;
+  }
+  .foot-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    margin-left: 0;
+  }
+  .disclaimer {
+    padding: 18px 14px;
+  }
+  .disclaimer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .disclaimer h4 {
+    font-size: 17px;
+  }
+  .disc-shield {
+    width: 36px;
+    height: 36px;
+  }
+  .disclaimer p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .copyright {
+    font-size: 12px;
+    padding: 16px 14px;
+  }
+}
