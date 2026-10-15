@@ -77,10 +77,10 @@
   background-size: 26px;
 }
 .stat-people {
-  background-image: url("../../assets/1f975.svg");
+  background-image: url("../../assets/icons/stat-people.svg");
 }
 .stat-cal {
-  background-image: url("../../assets/0c297.svg");
+  background-image: url("../../assets/icons/stat-calendar.svg");
 }
 .stat-text strong {
   display: block;
@@ -186,23 +186,23 @@
   content: none;
 }
 .f-user {
-  background-image: url("../../assets/9f4f7.svg");
+  background-image: url("../../assets/icons/form-user.svg");
   opacity: 0.5;
 }
 .f-phone {
-  background-image: url("../../assets/eea41.svg");
+  background-image: url("../../assets/icons/form-phone.svg");
   opacity: 0.5;
 }
 .f-mail {
-  background-image: url("../../assets/43561.svg");
+  background-image: url("../../assets/icons/form-email.svg");
   opacity: 0.5;
 }
 .f-pin {
-  background-image: url("../../assets/55651.svg");
+  background-image: url("../../assets/icons/form-location.svg");
   opacity: 1;
 }
 .f-cal {
-  background-image: url("../../assets/d8b4a.svg");
+  background-image: url("../../assets/icons/form-calendar.svg");
   opacity: 0.6;
 }
 .field-select select {
@@ -228,6 +228,87 @@
 .terms a {
   color: var(--blue);
   text-decoration: underline;
+}
+
+/* ===== LARGE DESKTOP: 1280px REFERENCE ARTBOARD =====
+   Uses the wide copy column, larger family image, and full quote card.
+   Smaller artboards keep their dedicated fixed-frame rules below. */
+@media (min-width: 1101px) {
+  .hero-inner {
+    max-width: 1241px;
+    min-height: 560px;
+    padding: 18px 20px 80px;
+    grid-template-columns: minmax(0, 1fr) 1fr 345px;
+  }
+  .hero-left {
+    padding-right: 36px;
+  }
+  .hero-left h1 {
+    max-width: 560px;
+    font-size: 52px;
+    line-height: 1.18;
+    margin-bottom: 24px;
+  }
+  .hero-left p {
+    max-width: 560px;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 28px;
+  }
+  .btn-hero {
+    width: 240px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+  .hero-stats {
+    gap: 28px;
+  }
+  .stat-icon {
+    width: 52px;
+    height: 52px;
+    background-size: 30px;
+  }
+  .stat-text strong {
+    font-size: 24px;
+  }
+  .stat-text small {
+    font-size: 14px;
+  }
+  .hero-photo {
+    height: 406px;
+    object-position: center 20%;
+    border-radius: 10px 0 0 10px;
+  }
+  .quote-card {
+    width: 345px;
+    min-height: 436px;
+    margin-top: -8px;
+    padding: 18px 16px 14px;
+  }
+  .quote-card h2 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+  }
+  .field {
+    min-height: 42px;
+    padding: 9px 10px;
+    margin-bottom: 8px;
+  }
+  .field input,
+  .field select {
+    font-size: 14px;
+  }
+  .btn-quote {
+    height: 48px;
+    font-size: 16px;
+  }
+  .terms {
+    font-size: 12px;
+    line-height: 20px;
+  }
 }
 
 /* ---------- 2. PROCESS BAR ---------- */
@@ -269,19 +350,19 @@
 }
 /* Step icons matching reference image exactly */
 .step-doc {
-  background-image: url("../../assets/i-quick.svg");
+  background-image: url("../../assets/icons/process-document.svg");
   background-size: 26px;
 }
 .step-tag {
-  background-image: url("../../assets/e93f3.svg");
+  background-image: url("../../assets/icons/process-tag.svg");
   background-size: 26px;
 }
 .step-hand {
-  background-image: url("../../assets/step-hire.svg");
+  background-image: url("../../assets/icons/process-hire.svg");
   background-size: 26px;
 }
 .step-shield {
-  background-image: url("../../assets/7cf12.svg");
+  background-image: url("../../assets/icons/process-shield.svg");
   background-size: 28px;
 }
 .step-label {
@@ -347,13 +428,13 @@
   background-size: 38px;
 }
 .expect-lotus {
-  background-image: url("../../assets/b61cd.png");
+  background-image: url("../../assets/icons/feature-stress-free.png");
 } /* blue lotus icon */
 .expect-shield {
-  background-image: url("../../assets/6871d.png");
+  background-image: url("../../assets/icons/feature-safety.png");
 } /* green shield-check icon */
 .expect-coins {
-  background-image: url("../../assets/df29d.png");
+  background-image: url("../../assets/icons/feature-pricing.png");
 } /* blue coins icon */
 .expect-card h3 {
   font-size: 24px;
@@ -408,13 +489,13 @@
   background-size: 32px;
 }
 .svc-home {
-  background-image: url("../../assets/e10df.svg");
+  background-image: url("../../assets/icons/service-home-icon.svg");
 }
 .svc-chair {
-  background-image: url("../../assets/7a6e3.svg");
+  background-image: url("../../assets/icons/service-office-icon.svg");
 }
 .svc-car {
-  background-image: url("../../assets/4e815.svg");
+  background-image: url("../../assets/icons/service-vehicle-icon.svg");
 }
 .service-card h3 {
   font-size: 22px;
@@ -798,19 +879,19 @@
   background-size: 32px;
 }
 .b-shield {
-  background-image: url("../../assets/ba452.png");
+  background-image: url("../../assets/icons/trust-verified.png");
 }
 .b-coins {
-  background-image: url("../../assets/df29d.png");
+  background-image: url("../../assets/icons/feature-pricing.png");
 }
 .b-crown {
-  background-image: url("../../assets/b3899.png");
+  background-image: url("../../assets/icons/trust-wide-services.png");
 }
 .b-pin {
-  background-image: url("../../assets/f4e1a.png");
+  background-image: url("../../assets/icons/trust-pan-india.png");
 }
 .b-headset {
-  background-image: url("../../assets/76a52.png");
+  background-image: url("../../assets/icons/trust-support.png");
 }
 .badge small {
   font-size: 14px;
@@ -889,7 +970,7 @@
 .stars {
   width: 104px;
   height: 20px;
-  background: url("../../assets/9a67e.svg") no-repeat center / contain;
+  background: url("../../assets/icons/testimonial-stars.svg") no-repeat center / contain;
   margin-left: auto;
   text-indent: -9999px;
 }
@@ -907,7 +988,7 @@
 ============================================================ */
 
 /* ===== DESKTOP: 1024px ARTBOARD ===== */
-@media (max-width: 1100.98px) and (not (max-width: 899.98px)) {
+@media (max-width: 1100.98px) and (min-width: 900px) {
   body {
     width: 1100px;
     overflow-x: hidden;
@@ -2542,7 +2623,7 @@
 }
 
 /* ---------- 768px reference artboard ---------- */
-@media (max-width: 899.98px) and (not (max-width: 767.98px)) {
+@media (max-width: 899.98px) and (min-width: 768px) {
   html {
     background: #fff;
   }
@@ -3247,7 +3328,7 @@
   }
 }
 
-@media (max-width: 899.98px) and (not (max-width: 767.98px)) {
+@media (max-width: 899.98px) and (min-width: 768px) {
   .finder {
     min-height: 145px;
   }

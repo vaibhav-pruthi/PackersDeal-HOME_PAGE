@@ -246,16 +246,16 @@ a {
   background-size: contain;
 }
 .soc-fb {
-  background-image: url("../../assets/83967.svg");
+  background-image: url("../../assets/icons/social-facebook.svg");
 }
 .soc-ig {
-  background-image: url("../../assets/85c62.svg");
+  background-image: url("../../assets/icons/social-instagram.svg");
 }
 .soc-in {
-  background-image: url("../../assets/53d12.svg");
+  background-image: url("../../assets/icons/social-linkedin.svg");
 }
 .soc-x {
-  background-image: url("../../assets/9af5f.svg");
+  background-image: url("../../assets/icons/social-x.svg");
 }
 .foot-col {
   display: flex;
@@ -311,7 +311,7 @@ a {
   height: 46px;
   display: inline-block;
   flex-shrink: 0;
-  background-image: url("../../assets/561e5.svg");
+  background-image: url("../../assets/icons/disclaimer-shield.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -340,7 +340,7 @@ a {
 
 /* ===== COMPACT DESKTOP — stable non-collapsing canvas from 1024px to 1100px =====
    The 768px/680px/600px/376px reference layouts remain fluid below this range. */
-@media (max-width: 1100.98px) and (not (max-width: 899.98px)) {
+@media (max-width: 1100.98px) and (min-width: 900px) {
   body {
     width: 1100px;
     overflow-x: hidden;
@@ -927,7 +927,7 @@ a {
 }
 
 /* ===== TABLET: 768px reference navbar ===== */
-@media (max-width: 899.98px) and (not (max-width: 767.98px)) {
+@media (max-width: 899.98px) and (min-width: 768px) {
   .nav-inner {
     width: 430px;
     max-width: 430px;
@@ -1055,3 +1055,4 @@ a {
     line-height: 15px;
   }
 }
+
