@@ -1,15 +1,12 @@
+
+
 /* ============================================================
-   PackersDeal — styles.css (UPDATED 2026-10-09)
-   Exact Figma colors. No dark-mode overrides.
-   Sections: 1 base | 2 navbar | 3 hero | 4 process | 5 expect |
-   6 services | 7 finder | 8 about | 9 locations | 10 trust |
-   11 footer
-   Order: desktop/base styles first, then compact desktop, tablet, and mobile
-   breakpoint overrides. The most specific reference-artboard overrides remain
-   at the end of their breakpoint group so the cascade stays unchanged.
+   PACKERSDEAL SHARED STYLES
+   Owns design tokens, reset, typography, navbar, footer, and
+   shared responsive chrome. Page sections live in pages/index.css.
 ============================================================ */
 
-/* ---------- 1. BASE STYLES (shared by all screen sizes) ---------- */
+/* ---------- 1. BASE STYLES ---------- */
 * {
   margin: 0;
   padding: 0;

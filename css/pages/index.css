@@ -1,14 +1,12 @@
 
 
 /* ============================================================
-   PackersDeal home page styles
-   Order: complete desktop section styles first, followed by the
-   responsive breakpoint groups below (desktop -> tablet -> mobile).
-   Late compatibility fixes intentionally stay last in their groups
-   because they preserve the existing cascade.
+   PACKERSDEAL HOME PAGE STYLES
+   Shared tokens, navbar, and footer rules live in ../common/styles.css.
+   This file owns the home-page sections and responsive layouts.
 ============================================================ */
 
-/* ---------- 3. HERO (light blue #DDEFFD, one continuous background) ---------- */
+/* ---------- 1. HERO ---------- */
 .hero {
   background: var(--hero);
   overflow: visible;
@@ -233,7 +231,7 @@
   text-decoration: underline;
 }
 
-/* ---------- 4. PROCESS BAR (light blue #ECF6FE, sits half on the hero, half below it) ---------- */
+/* ---------- 2. PROCESS BAR ---------- */
 .process-wrap {
   max-width: 1241px;
   margin: 0 auto;
@@ -303,7 +301,7 @@
   display: none;
 }
 
-/* ---------- 5. EXPECT (white background, heading + 3 feature cards) ---------- */
+/* ---------- 3. EXPECT ---------- */
 .expect {
   max-width: 1241px;
   margin: 0 auto;
@@ -368,7 +366,7 @@
   line-height: 32px;
 }
 
-/* ---------- 6. SERVICES (light blue #DDEFFD background, 3 cards) ---------- */
+/* ---------- 4. SERVICES ---------- */
 .services {
   background: var(--hero);
   padding: 64px 20px;
@@ -430,7 +428,7 @@
   margin: 0 20px 24px;
 }
 
-/* ---------- 7. FINDER (black search band) ---------- */
+/* ---------- 5. FINDER ---------- */
 .finder {
   background: #000;
   height: 184px;
@@ -610,7 +608,7 @@
   margin-left: 4px;
 }
 
-/* ---------- 8. ABOUT (white background, text + tip cards) ---------- */
+/* ---------- 6. ABOUT ---------- */
 .about {
   max-width: 1241px;
   margin: 0 auto;
@@ -663,7 +661,7 @@
   font-weight: 600;
 }
 
-/* ---------- 9. LOCATIONS (light blue #D3EAFD background) ---------- */
+/* ---------- 7. LOCATIONS ---------- */
 .locations {
   background: var(--loc);
   padding: 56px 20px;
@@ -769,7 +767,7 @@
   margin-top: -1px;
 }
 
-/* ---------- 10. TRUST (white background, badges + testimonial) ---------- */
+/* ---------- 8. TRUST ---------- */
 .trust {
   max-width: 1241px;
   margin: 0 auto;
@@ -900,8 +898,16 @@
 /* Footer base styles are shared from css/common/styles.css. Only responsive
    footer overrides remain in this page stylesheet. */
 
-/* ===== COMPACT DESKTOP: 1024px / 1100px reference layout =====
-   The 768px/680px/600px/376px reference layouts below must remain fluid. */
+/* ============================================================
+   RESPONSIVE LAYOUTS
+   - 900px and above: 1024px desktop artboard, scaled by script.js.
+   - 768px–899px: 768px reference artboard.
+   - 680px–767px: 680px reference artboard.
+   - 480px–679px: 600px reference artboard.
+   - Below 480px: Frame 5943 / 376px mobile artboard.
+============================================================ */
+
+/* ===== DESKTOP: 1024px ARTBOARD ===== */
 @media (max-width: 1100.98px) and (min-width: 900px) {
   body {
     width: 1100px;
@@ -3182,7 +3188,13 @@
   }
 }
 
-/* ---------- COMPATIBILITY OVERRIDES: finder anti-collapse fixes ---------- */
+/* ============================================================
+   COMPATIBILITY OVERRIDES
+   These remain at the end because the fixed Figma artboard rules
+   above need small, component-scoped corrections at narrow widths.
+============================================================ */
+
+/* Finder / search band */
 @media (max-width: 899.98px) {
   .finder {
     height: auto;
@@ -3384,7 +3396,7 @@
   }
 }
 
-/* ---------- COMPATIBILITY OVERRIDES: calculator card reference fix ---------- */
+/* Calculator card */
 @media (max-width: 767.98px) {
   .calc-card {
     width: min(100%, 573px);
