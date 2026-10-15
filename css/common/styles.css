@@ -204,7 +204,6 @@ a {
 }
 .foot-brand {
   flex: 1;
-  min-width: 220px;
 }
 .foot-brand .brand-col > img {
   width: 204px;
@@ -262,7 +261,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 150px;
 }
 .foot-col h4 {
   font-size: 16px;
@@ -342,10 +340,9 @@ a {
 
 /* ===== COMPACT DESKTOP — stable non-collapsing canvas from 1024px to 1100px =====
    The 768px/680px/600px/376px reference layouts remain fluid below this range. */
-@media (max-width: 1100.98px) and (min-width: 900px) {
+@media (max-width: 1100.98px) and (not (max-width: 899.98px)) {
   body {
     width: 1100px;
-    min-width: 1100px;
     overflow-x: hidden;
     zoom: var(--desktop-scale, 1);
   }
@@ -761,7 +758,6 @@ a {
   }
   .foot-brand {
     flex: 0 0 200px;
-    min-width: 0;
   }
   .brand-col > img {
     width: 200px;
@@ -777,7 +773,6 @@ a {
     flex: 1;
   }
   .foot-col {
-    min-width: 0;
     flex: 1;
   }
   /* Disclaimer panel: full-width dark blue band */
@@ -823,7 +818,6 @@ a {
 @media (max-width: 899.98px) {
   body {
     width: auto;
-    min-width: 0;
     zoom: 1 !important;
     overflow-x: hidden;
   }
@@ -881,7 +875,6 @@ a {
     align-items: flex-end;
     gap: 34px;
     flex: none;
-    min-width: 0;
   }
   .brand-col {
     display: flex;
@@ -915,9 +908,6 @@ a {
     gap: 32px 145px;
     max-width: 535px;
   }
-  .foot-col {
-    min-width: 0;
-  }
   .foot-col h4 {
     font-size: 20px;
     font-weight: 500;
@@ -937,7 +927,7 @@ a {
 }
 
 /* ===== TABLET: 768px reference navbar ===== */
-@media (min-width: 768px) and (max-width: 899.98px) {
+@media (max-width: 899.98px) and (not (max-width: 767.98px)) {
   .nav-inner {
     width: 430px;
     max-width: 430px;
@@ -947,7 +937,6 @@ a {
   }
   .nav-logo {
     flex: 0 0 105px;
-    min-width: 0;
   }
   .nav-logo img {
     width: 105px;
@@ -995,7 +984,6 @@ a {
   }
   .nav-logo {
     flex: 0 0 147.29px;
-    min-width: 0;
   }
   .nav-logo img {
     width: 147.29px;
