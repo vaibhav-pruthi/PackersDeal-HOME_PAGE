@@ -3,7 +3,10 @@
    Exact Figma colors. No dark-mode overrides.
    Sections: 1 base | 2 navbar | 3 hero | 4 process | 5 expect |
    6 services | 7 finder | 8 about | 9 locations | 10 trust |
-   11 footer | 12 responsive (1024 desktop + 3 small breakpoints)
+   11 footer
+   Order: desktop/base styles first, then compact desktop, tablet, and mobile
+   breakpoint overrides. The most specific reference-artboard overrides remain
+   at the end of their breakpoint group so the cascade stays unchanged.
 ============================================================ */
 
 /* ---------- 1. BASE STYLES (shared by all screen sizes) ---------- */
@@ -72,7 +75,13 @@ a {
   margin: -20px auto 40px;
 }
 
-/* ---------- 2. NAVBAR (72.71px tall, white background) ---------- */
+/* ============================================================
+   NAVBAR
+   Base/desktop styles come first. Responsive navbar overrides are
+   grouped in the breakpoint sections below this shared component.
+============================================================ */
+
+/* ---------- 2. NAVBAR: DESKTOP / BASE ---------- */
 .navbar {
   background: #fff;
   position: sticky;
@@ -88,7 +97,6 @@ a {
   display: flex;
   align-items: center;
   gap: 32px;
-  
 }
 .nav-logo img {
   width: 204px;
@@ -98,7 +106,7 @@ a {
 .nav-links {
   display: flex;
   gap: 32px;
- margin: 0  auto;
+  margin: 0 auto;
 }
 .nav-links a {
   font-size: 15px;
@@ -178,8 +186,13 @@ a {
   color: var(--blue);
 }
 
+/* ============================================================
+   FOOTER
+   Shared desktop/base footer styles live here so page stylesheets
+   only need to contain page-specific and breakpoint-specific rules.
+============================================================ */
 
-/* ---------- 11. FOOTER (dark background #1D2027) ---------- */
+/* ---------- 11. FOOTER: DESKTOP / BASE ---------- */
 .footer {
   background: var(--foot);
   color: #fff;
@@ -324,6 +337,11 @@ a {
   font-size: 14px;
   color: #b1dafb;
 }
+
+/* ============================================================
+   SHARED RESPONSIVE OVERRIDES
+   Order: compact desktop -> tablet -> mobile.
+============================================================ */
 
 /* ===== COMPACT DESKTOP — stable non-collapsing canvas from 1024px to 1100px =====
    The 768px/680px/600px/376px reference layouts remain fluid below this range. */
@@ -797,14 +815,14 @@ a {
   }
 }
 
-/* ---------- 12. RESPONSIVE LAYOUTS ---------- */
-/* NOTE: the three small breakpoints below are taken exactly from the Figma specs —
+/* ===== TABLET / MOBILE SHARED OVERRIDES =====
+   The following breakpoint groups are taken exactly from the Figma specs —
    680px "680 Home Page" (680x6519), 600px "600 Home Page" (600x7553),
    376px mobile "376 Home Page" (376x8900.36).
    A separate 1024px desktop layout (Figma "1280 Home Page" at 1024x4047)
    is defined in its own block just above these. */
 
-/* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
+/* ===== TABLET: 680px / 900px reference range ===== */
 @media (max-width: 899.98px) {
   body {
     width: auto;
@@ -921,7 +939,7 @@ a {
   
 }
 
-/* ===== 768px reference navbar ===== */
+/* ===== TABLET: 768px reference navbar ===== */
 @media (min-width: 768px) and (max-width: 899.98px) {
   .nav-inner {
     width: 430px;
@@ -968,7 +986,7 @@ a {
   }
 }
 
-/* ===== Frame 5943 / 376px mobile header + footer ===== */
+/* ===== MOBILE: 376px header + footer ===== */
 @media (max-width: 479px) {
   .nav-inner {
     width: 356px;

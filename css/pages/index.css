@@ -1,5 +1,13 @@
 
 
+/* ============================================================
+   PackersDeal home page styles
+   Order: complete desktop section styles first, followed by the
+   responsive breakpoint groups below (desktop -> tablet -> mobile).
+   Late compatibility fixes intentionally stay last in their groups
+   because they preserve the existing cascade.
+============================================================ */
+
 /* ---------- 3. HERO (light blue #DDEFFD, one continuous background) ---------- */
 .hero {
   background: var(--hero);
@@ -889,132 +897,10 @@
   text-indent: -9999px;
 }
 
-/* ---------- 11. FOOTER (dark background #1D2027) ---------- */
+/* Footer base styles are shared from css/common/styles.css. Only responsive
+   footer overrides remain in this page stylesheet. */
 
-/* "DMCA Protected" badge image */
-.dmca {
-  height: 48px !important;
-  width: auto !important;
-  margin-top: 16px !important;
-  display: block;
-}
-/* Wrapper for the 4 footer link columns */
-.foot-cols {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  margin-left: auto;
-}
-.social h4 {
-  font-size: 16px;
-  margin-bottom: 12px;
-  font-family: "Inter";
-}
-.social-row {
-  display: flex;
-  gap: 19px;
-}
-/* Social icons (40px): Facebook solid blue, Instagram white outline, LinkedIn solid blue, X white outline */
-.soc {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.soc-fb {
-  background-image: url("../../assets/83967.svg");
-}
-.soc-ig {
-  background-image: url("../../assets/85c62.svg");
-}
-.soc-in {
-  background-image: url("../../assets/53d12.svg");
-}
-.soc-x {
-  background-image: url("../../assets/9af5f.svg");
-}
-.foot-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 150px;
-}
-.foot-col h4 {
-  font-size: 16px;
-  font-family: "Inter";
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-.foot-col h4 img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-}
-.foot-col a {
-  color: #b1dafb;
-  font-size: 14px;
-}
-/* Disclaimer panel - solid dark blue banner matching Figma / Image 1 */
-.disclaimer {
-  width: 100%;
-  background: var(--disc);
-  padding: 24px 20px;
-  margin: 28px 0 0 0;
-}
-.disclaimer-inner {
-  max-width: 1241px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.disclaimer h4 {
-  font-size: 20px;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-  color: #fff;
-  letter-spacing: -0.2px;
-}
-/* Blue shield-check icon */
-.disc-shield {
-  width: 46px;
-  height: 46px;
-  display: inline-block;
-  flex-shrink: 0;
-  background-image: url("../../assets/561e5.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.disclaimer p {
-  font-size: 13.5px;
-  color: #a9d5fa;
-  line-height: 21px;
-  font-weight: 400;
-  margin: 0;
-  letter-spacing: 0.1px;
-}
-/* Bottom copyright band */
-.copyright {
-  background: var(--foot);
-  text-align: center;
-  padding: 24px 20px;
-  font-size: 14px;
-  color: #b1dafb;
-}
-
-/* ===== COMPACT DESKTOP — stable non-collapsing canvas from 1024px to 1100px =====
+/* ===== COMPACT DESKTOP: 1024px / 1100px reference layout =====
    The 768px/680px/600px/376px reference layouts below must remain fluid. */
 @media (max-width: 1100.98px) and (min-width: 900px) {
   body {
@@ -1412,14 +1298,12 @@
   }
 }
 
-/* ---------- 12. RESPONSIVE LAYOUTS ---------- */
-/* NOTE: the three small breakpoints below are taken exactly from the Figma specs —
-   680px "680 Home Page" (680x6519), 600px "600 Home Page" (600x7553),
-   376px mobile "376 Home Page" (376x8900.36).
-   A separate 1024px desktop layout (Figma "1280 Home Page" at 1024x4047)
-   is defined in its own block just above these. */
+/* ---------- RESPONSIVE OVERRIDES (desktop -> tablet -> mobile) ---------- */
+/* The complete desktop section styles are above. The breakpoint groups below
+   retain all pixel-specific rules for the 1024px desktop, 680px/600px tablet,
+   376px mobile, and 768px reference artboard layouts. */
 
-/* ===== 680px TABLET — exact Figma "680 Home Page" spec (680x6519) ===== */
+/* ===== TABLET: 680px reference layout ===== */
 @media (max-width: 767.98px) {
   body {
     width: auto;
@@ -2155,7 +2039,7 @@
   }
 }
 
-/* ===== 600px TABLET — exact Figma "600 Home Page" spec (600x7553) =====
+/* ===== TABLET: 600px reference layout =====
    Only the values that differ from the 680px block above are overridden here. */
 @media (max-width: 679.98px) {
   /* NAVBAR: 600x70 */
@@ -2257,7 +2141,7 @@
   }
 }
 
-/* ===== 376px MOBILE — exact Figma "376 Home Page" spec (376x8900.36) ===== */
+/* ===== MOBILE: 376px reference layout ===== */
 @media (max-width: 479px) {
   body {
     width: auto;
@@ -3298,7 +3182,7 @@
   }
 }
 
-/* ---------- Finder anti-collapse fixes ---------- */
+/* ---------- COMPATIBILITY OVERRIDES: finder anti-collapse fixes ---------- */
 @media (max-width: 899.98px) {
   .finder {
     height: auto;
@@ -3500,7 +3384,7 @@
   }
 }
 
-/* ---------- Calculator card mobile/tablet reference fix ---------- */
+/* ---------- COMPATIBILITY OVERRIDES: calculator card reference fix ---------- */
 @media (max-width: 767.98px) {
   .calc-card {
     width: min(100%, 573px);
@@ -3582,4 +3466,3 @@
     font-size: 17px;
   }
 }
-
