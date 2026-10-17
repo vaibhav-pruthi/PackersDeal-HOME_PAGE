@@ -581,51 +581,86 @@ a {
   }
   .foot-inner {
     flex-direction: column;
-    gap: 36px;
-    padding: 44px 20px 24px;
+    gap: 32px;
+    padding: 20px 20px 24px;
     max-width: 100%;
   }
   .foot-brand {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important;
-    width: 100% !important;
-    margin-bottom: 8px;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    padding: 0px !important;
+    gap: 34px !important;
+    width: 409px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    flex: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
   }
   .brand-col {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 0px !important;
+    gap: 19px !important;
+    width: 224px !important;
+    flex: none !important;
   }
   .brand-col > img {
-    width: 190px;
-    height: auto;
-    margin-bottom: 20px;
+    width: 204px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px !important;
+    gap: 8px !important;
+    width: 224px !important;
+    margin: 0 !important;
   }
   .social h4 {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #fff;
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
+    color: #FFFFFF !important;
+    width: 224px !important;
+    height: 30px !important;
+    margin: 0 !important;
   }
   .social-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 0;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0px !important;
+    gap: 19px !important;
+    width: 217px !important;
+    height: 40px !important;
+    margin: 0 !important;
   }
   .soc {
-    width: 36px;
-    height: 36px;
+    width: 40px !important;
+    height: 40px !important;
+    flex: none !important;
   }
   .dmca {
-    height: 46px;
-    width: auto;
+    width: 151px !important;
+    height: 52px !important;
+    flex: none !important;
     margin: 0 !important;
-    display: block;
+    display: block !important;
+    align-self: flex-end !important;
   }
   .foot-cols {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 32px 40px !important;
+    gap: 32px 48px !important;
     margin-left: 0 !important;
     width: 100% !important;
   }
@@ -709,13 +744,95 @@ a {
   .foot-inner {
     flex-direction: column;
     gap: 32px;
-    padding: 36px 16px 20px;
+    padding: 20px 16px 20px;
+    max-width: 100%;
+  }
+  .foot-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    padding: 0px !important;
+    gap: 34px !important;
+    width: 409px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    flex: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+  .brand-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px !important;
+    gap: 19px !important;
+    width: 224px !important;
+    flex: none !important;
+  }
+  .brand-col > img {
+    width: 204px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px !important;
+    gap: 8px !important;
+    width: 224px !important;
+    margin: 0 !important;
+  }
+  .social h4 {
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 30px !important;
+    color: #FFFFFF !important;
+    width: 224px !important;
+    height: 30px !important;
+    margin: 0 !important;
+  }
+  .social-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0px !important;
+    gap: 19px !important;
+    width: 217px !important;
+    height: 40px !important;
+    margin: 0 !important;
+  }
+  .soc {
+    width: 40px !important;
+    height: 40px !important;
+    flex: none !important;
+  }
+  .dmca {
+    width: 151px !important;
+    height: 52px !important;
+    flex: none !important;
+    margin: 0 !important;
+    display: block !important;
+    align-self: flex-end !important;
   }
   .foot-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-left: 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 40px !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .foot-col h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .foot-col a {
+    font-size: 13.5px;
+    line-height: 22px;
   }
   .disclaimer-inner {
     flex-direction: column;
@@ -749,14 +866,65 @@ a {
   }
   .foot-inner {
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
     padding: 32px 14px 20px;
+    max-width: 100%;
+  }
+  .foot-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    flex: none !important;
+    height: auto !important;
+    width: 100% !important;
+    margin-bottom: 6px;
+  }
+  .brand-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .brand-col > img {
+    width: 140px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .social h4 {
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .social-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .soc {
+    width: 30px;
+    height: 30px;
+  }
+  .dmca {
+    height: 32px;
+    width: auto;
+    margin: 0 !important;
+    display: block;
+    align-self: flex-end;
   }
   .foot-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px 16px;
-    margin-left: 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px 16px !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .foot-col h4 {
+    font-size: 13.5px;
+    margin-bottom: 8px;
+  }
+  .foot-col a {
+    font-size: 11.5px;
+    line-height: 19px;
   }
   .disclaimer {
     padding: 18px 14px;
