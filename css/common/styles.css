@@ -435,28 +435,75 @@ a {
 }
 
 /* ============================================================
-   BREAKPOINT 2: 1024px to 768px (Image 3)
+   BREAKPOINT 2: 1024px to 769px (Image 3)
    Navbar has logo on left, CTA button + hamburger on right.
    Footer has brand + 2x2 grid of link columns.
 ============================================================ */
-@media (max-width: 1023.98px) and (min-width: 750px) {
+@media (max-width: 1023.98px) and (min-width: 769px) {
   .nav-inner {
-    height: 70px;
+    max-width: 1024px;
+    height: 72px;
     padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    position: relative;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .nav-logo img {
+    width: clamp(170px, 18vw, 195px);
+    height: auto;
   }
   .nav-links {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 1.6vw, 22px);
+    margin: 0 auto;
+  }
+  .nav-links a {
+    font-size: clamp(12.5px, 1.35vw, 14.5px);
+    font-weight: 500;
+    color: #1d2027;
+    white-space: nowrap;
+    position: relative;
+    padding: 6px 0;
+  }
+  .nav-links a.active {
+    color: var(--blue);
+  }
+  .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    width: 51px;
+    height: 2px;
+    background: var(--blue);
   }
   .hamburger {
-    display: block;
-    margin-left: 12px;
+    display: none;
   }
   .nav-inner .btn-nav {
     display: inline-flex;
-    width: 210px;
+    width: auto;
+    min-width: clamp(175px, 18vw, 215px);
     height: 44px;
-    font-size: 14px;
-    margin-left: auto;
+    padding: 0 16px;
+    font-size: clamp(11.5px, 1.25vw, 13.5px);
+    font-weight: 700;
+    margin-left: 0;
+    border-radius: 12px;
+    white-space: nowrap;
+    background: var(--grad);
+    color: #fff;
+    flex-shrink: 0;
   }
   .foot-inner {
     flex-direction: column;
@@ -477,44 +524,158 @@ a {
 }
 
 /* ============================================================
-   BREAKPOINT 3: 768px to 680px (Image 4)
-   Navbar has logo, CTA button, and hamburger.
-   Footer has brand + 2x2 grid.
+   BREAKPOINT 3: 768px to 680px (Figma Mobile/Tablet Spec)
+   - Navbar: Logo on left, CTA button + 2-bar hamburger on right
+   - Footer: Logo + social on left, DMCA on right (top row)
+             2x2 grid for link columns
+             Disclaimer banner with shield icon on left, text on right
 ============================================================ */
-@media (max-width: 749.98px) and (min-width: 680px) {
+@media (max-width: 768px) and (min-width: 680px) {
   .nav-inner {
-    height: 66px;
-    padding: 0 16px;
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .nav-logo img {
+    width: 185px;
+    height: auto;
   }
   .nav-links {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-    margin-left: 10px;
+    display: none !important;
   }
   .nav-inner .btn-nav {
-    display: inline-flex;
-    width: 190px;
+    display: inline-flex !important;
+    width: auto;
+    padding: 0 18px;
     height: 42px;
-    font-size: 13.5px;
+    font-size: 13px;
+    font-weight: 700;
     margin-left: auto;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: none;
+    border: 0;
+    padding: 6px;
+    cursor: pointer;
+    margin-left: 6px;
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 3.5px;
+    background: #1d2027;
+    border-radius: 2px;
+    margin: 0;
+  }
+  .hamburger span:nth-child(3) {
+    display: none !important;
   }
   .foot-inner {
     flex-direction: column;
     gap: 36px;
-    padding: 40px 16px 24px;
+    padding: 44px 20px 24px;
+    max-width: 100%;
+  }
+  .foot-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    margin-bottom: 8px;
+  }
+  .brand-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-col > img {
+    width: 190px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .social h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .social-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+  .soc {
+    width: 36px;
+    height: 36px;
+  }
+  .dmca {
+    height: 46px;
+    width: auto;
+    margin: 0 !important;
+    display: block;
   }
   .foot-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 36px;
-    margin-left: 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 40px !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .foot-col h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .foot-col a {
+    font-size: 13.5px;
+    line-height: 22px;
+  }
+  .disclaimer {
+    width: 100%;
+    background: var(--disc);
+    padding: 24px 20px;
+    margin-top: 36px;
   }
   .disclaimer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    max-width: 100% !important;
+  }
+  .disclaimer h4 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    flex-shrink: 0;
+    color: #fff;
+    margin: 0;
+  }
+  .disc-shield {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+  .disclaimer p {
+    font-size: 12px;
+    line-height: 19px;
+    color: #a9d5fa;
+    margin: 0;
+  }
+  .copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #b1dafb;
+    background: var(--foot);
   }
 }
 
