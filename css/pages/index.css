@@ -1964,7 +1964,7 @@
 ============================================================ */
 @media (max-width: 768px) and (min-width: 680px) {
   .hero {
-    background: var(--hero);
+    background: #DDEFFD;
     overflow: visible;
     position: relative;
   }
@@ -1972,18 +1972,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 20px 48px;
-    gap: 0;
-    max-width: 768px;
+    padding: 20px 20px 75px;
+    gap: 10px;
+    max-width: 680px;
     margin: 0 auto;
     box-sizing: border-box;
     position: relative;
+    isolation: isolate;
   }
   .hero-left {
     width: 100%;
-    max-width: 725px;
+    max-width: 570px;
     text-align: left;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     position: relative;
     z-index: 2;
   }
@@ -1992,10 +1993,11 @@
     font-family: 'Quicksand', sans-serif !important;
     font-style: normal !important;
     font-weight: 700 !important;
-    font-size: clamp(32px, 5.2vw, 42px) !important;
-    line-height: clamp(42px, 6.8vw, 56px) !important;
+    font-size: 42px !important;
+    line-height: 56px !important;
     color: #000000 !important;
-    max-width: 625px !important;
+    width: 552px !important;
+    max-width: 100% !important;
     margin: 0 0 10px 0 !important;
   }
   .hero-left p {
@@ -2003,11 +2005,12 @@
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
     font-weight: 400 !important;
-    font-size: clamp(14px, 2.2vw, 18px) !important;
-    line-height: clamp(24px, 4vw, 34px) !important;
+    font-size: 18px !important;
+    line-height: 34px !important;
     color: #000000 !important;
-    max-width: 659px !important;
-    margin: 0 0 24px 0 !important;
+    width: 570px !important;
+    max-width: 100% !important;
+    margin: 0 0 40px 0 !important;
   }
   .btn-hero {
     display: inline-flex !important;
@@ -2026,7 +2029,7 @@
     font-size: 16px !important;
     line-height: 30px !important;
     color: #FFFFFF !important;
-    margin: 0 0 20px 0 !important;
+    margin: 0 0 24px 0 !important;
     box-sizing: border-box !important;
     text-decoration: none !important;
   }
@@ -2036,47 +2039,55 @@
     justify-content: flex-start !important;
     align-items: center !important;
     padding: 0px !important;
-    gap: 16px !important;
-    max-width: 364px !important;
-    height: auto !important;
+    gap: 7px !important;
+    width: 364px !important;
+    max-width: 100% !important;
+    height: 60px !important;
     margin-bottom: 24px !important;
   }
   .stat {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 16px !important;
+    width: 175px !important;
+    height: 60px !important;
   }
   .stat-icon {
     width: 36px !important;
     height: 36px !important;
     background-color: #C5E4FE !important;
     border-radius: 6px !important;
+    padding: 10px !important;
     flex-shrink: 0 !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-size: 22px !important;
+    background-size: 24px !important;
   }
   .stat-text {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    width: 123px !important;
+    height: 60px !important;
+    justify-content: center !important;
   }
   .stat-text strong {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
     font-weight: 600 !important;
     font-size: 24px !important;
-    line-height: 30px !important;
+    line-height: 34px !important;
     color: #000000 !important;
     display: block !important;
+    margin: -8px 0px !important;
   }
   .stat-text small {
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
     font-weight: 400 !important;
     font-size: 15px !important;
-    line-height: 22px !important;
+    line-height: 34px !important;
     color: rgba(0, 0, 0, 0.6) !important;
     display: block !important;
     white-space: nowrap !important;
@@ -2090,22 +2101,23 @@
   }
   .hero-right {
     width: 100% !important;
-    max-width: 768px !important;
+    max-width: 680px !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: flex-end !important;
-    gap: 16px !important;
+    gap: 15px !important;
     position: relative !important;
-    min-height: 420px !important;
-    margin-top: 10px !important;
+    min-height: 436px !important;
+    margin-top: 0 !important;
+    z-index: 2;
   }
   .hero-photo {
     position: static !important;
     flex: 1 1 auto !important;
-    width: calc(100% - 365px) !important;
-    max-width: 420px !important;
-    height: 385px !important;
+    width: calc(100% - 360px) !important;
+    max-width: 320px !important;
+    height: 431px !important;
     object-fit: cover !important;
     object-position: center bottom !important;
     border-radius: 12px !important;
@@ -2118,6 +2130,7 @@
     flex: 0 0 345px !important;
     width: 345px !important;
     max-width: 345px !important;
+    height: 436px !important;
     min-height: 436px !important;
     margin: 0 !important;
     padding: 10px !important;
@@ -2138,15 +2151,15 @@
     line-height: 34px !important;
     text-align: center !important;
     color: #000000 !important;
-    margin: 4px 0 6px 0 !important;
-    width: 100% !important;
+    margin: 0 0 4px 0 !important;
+    width: 289px !important;
   }
   .quote-card .field {
     width: 313px !important;
     max-width: 100% !important;
     height: 31px !important;
     min-height: 31px !important;
-    padding: 4px 8px !important;
+    padding: 10px 4px !important;
     gap: 6px !important;
     margin-bottom: 7px !important;
     background: #FFFFFF !important;
@@ -2162,7 +2175,10 @@
     font-weight: 500 !important;
     font-size: 14px !important;
     line-height: 28px !important;
-    color: rgba(0, 0, 0, 0.7) !important;
+    color: rgba(0, 0, 0, 0.4) !important;
+  }
+  .quote-card .field input::placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
   }
   .quote-card .field-row {
     width: 313px !important;
@@ -2178,9 +2194,11 @@
     width: 74px !important;
     flex: 0 0 74px !important;
     margin-bottom: 0 !important;
+    color: rgba(1, 1, 1, 0.4) !important;
   }
   .quote-card .row-phone .field:last-child {
-    flex: 1 !important;
+    width: 233px !important;
+    flex: 0 0 233px !important;
     margin-bottom: 0 !important;
   }
   .quote-card .row-pick {
@@ -2189,15 +2207,18 @@
   .quote-card .row-pick .field-select {
     width: 161px !important;
     flex: 0 0 161px !important;
+    padding: 10px 0px 10px 10px !important;
     margin-bottom: 0 !important;
   }
   .quote-card .row-pick .field:last-child {
-    flex: 1 !important;
+    width: 141px !important;
+    flex: 0 0 141px !important;
     margin-bottom: 0 !important;
   }
   .quote-card .btn-quote {
     width: 313px !important;
     height: 39px !important;
+    padding: 10px !important;
     background: linear-gradient(90deg, #005DD6 46.63%, #6BABFF 100%) !important;
     border-radius: 8px !important;
     font-family: 'Inter', sans-serif !important;
@@ -2208,15 +2229,16 @@
     color: #FFFFFF !important;
     border: none !important;
     cursor: pointer !important;
-    margin-top: 4px !important;
+    margin-top: 0 !important;
   }
   .quote-card .terms {
     width: 297px !important;
+    height: 56px !important;
     font-family: 'Inter', sans-serif !important;
     font-style: normal !important;
     font-weight: 500 !important;
-    font-size: 12px !important;
-    line-height: 20px !important;
+    font-size: 14px !important;
+    line-height: 28px !important;
     text-align: center !important;
     color: rgba(0, 0, 0, 0.6) !important;
     margin-top: 4px !important;

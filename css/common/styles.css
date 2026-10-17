@@ -533,14 +533,17 @@ a {
 @media (max-width: 768px) and (min-width: 680px) {
   .nav-inner {
     height: 70px;
-    padding: 0 20px;
+    padding: 18px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 18px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   .nav-logo img {
-    width: 185px;
+    width: 204px;
     height: auto;
   }
   .nav-links {
@@ -548,31 +551,43 @@ a {
   }
   .nav-inner .btn-nav {
     display: inline-flex !important;
-    width: auto;
-    padding: 0 18px;
-    height: 42px;
-    font-size: 13px;
-    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 48px;
+    padding: 10px;
+    background: linear-gradient(90deg, #005DD6 46.63%, #6BABFF 100%);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    color: #FFFFFF;
     margin-left: auto;
-    border-radius: 10px;
     white-space: nowrap;
+    box-sizing: border-box;
   }
   .hamburger {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 49.69px;
+    height: 52px;
+    padding: 7px 8px;
     gap: 6px;
     background: none;
     border: 0;
-    padding: 6px;
     cursor: pointer;
-    margin-left: 6px;
+    margin-left: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
   }
   .hamburger span {
     display: block;
-    width: 28px;
-    height: 3.5px;
-    background: #1d2027;
+    width: 33.69px;
+    height: 3px;
+    background: #000000;
     border-radius: 2px;
     margin: 0;
   }
